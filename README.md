@@ -25,3 +25,6 @@ Umsetzung/ Arbeitsteilung:
 Um maximalen Ertrag zu erreichen wurden die einzelnen Teilseiten an die jeweillig verfügbaren Arbeiter (Janis, Lenny, Julian) aufgeteilt. Es wurde zuerst ein solides Grundkonzept ausgearbeitet und in Skizzen festgehalten. 
 Durch Github als Knotenpunkt für die Gemeinsame Arbeit wurde der einfache Datenaustausch ermöglicht und in Visual Studio Code weiter umgesetzt.
 
+
+
+
