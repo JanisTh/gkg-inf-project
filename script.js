@@ -66,29 +66,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // OTHER SCRIPTS //
 ///////////////////
 
-function randomColor() {
-    var color = '#' + Math.random().toString(16).substr(2, 6);
-    document.getElementById("basicButton").style.backgroundColor = color;
-  
-    document.getElementById("basicButton").innerHTML = color;
-    console.log(color);
-}
+var room;
 
-
-function openDetail(detailsElement) {
-    var detailsArray = ["basicDetails", "advancedDetails", "proDetails", "elonMuskDetails"];
-    if (document.getElementById(detailsElement).open) {
-        document.getElementById(detailsElement).open = false;
-    }
-    else{
-        detailsArray.forEach(id => {
-            document.getElementById(id).open = false;
-        });
-        document.getElementById(detailsElement).open = true;
-    }
-}
-function clearInput() {
-    document.getElementById("name").value = "";
-    document.getElementById("Postadresse").value = "";
-    document.getElementById("anliegen").value = "Danke für Ihre Einsendung";
+function changeRoomValue(value) {
+    room = value;
+    console.log("room changed to " + value);
 }

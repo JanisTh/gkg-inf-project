@@ -1,14 +1,61 @@
 <style>
-    .bookingButton{
-        width: 35%;
-        height: 35%;
+    .buchenParentBox{
+        position: relative;
+        left: 25%;
+        padding: 0;
+        height: 0;
+        padding-top: 50%;
+        background-color: aqua;
+        width: 50%;
+        margin-top: 10vh;
+        margin-bottom: 20vh;
+    }
 
+    .bookingButton{
+        box-sizing: border-box;
+        position: absolute;
+        border: 0;
+        padding: 0px;
+        margin: 0px;
+        width: 50%;
+        height: 50%;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: large;
+        font-weight: bold;
+    }
+    #doppelzimmerButton{
+        top: 0;
+        left: 0;
+        background-image: url(material/181890899.jpg);
+        background-size:cover;
+    }
+    #familienzimmerButton{
+        top: 0;
+        right: 0;
+        background-image: url(material/Familienzimmer.jpg);
+        background-size: 135%;
+        background-position: right;
+    }
+    #gruppenzimmerButton{
+        bottom: 0;
+        left: 0;
+        background-image: url(material/10erZimmer.jpg);
+        background-size: 180%;
+        background-position: bottom left;
+    }
+    #luxusSuiteButton{
+        bottom: 0;
+        right: 0;
+        background-image: url(material/LuxusSuite.jpg);
+        background-size:cover;
     }
 </style>
 
-<button class="bookingButton">Doppelzimmer</button>
-<button class="bookingButton">Familienzimmer</button> 
-<br></br>
-<button class="bookingButton">Gruppenzimmer</button>
-<button class="bookingButton">Luxus-Suite</button>
 
+<div class="buchenParentBox">
+    <button class="bookingButton" id="doppelzimmerButton" onclick="changeRoomValue('Doppelzimmer');window.location.href = '?page=kalender'">Doppelzimmer</button>
+    <button class="bookingButton" id="familienzimmerButton" onclick="changeRoomValue('Familienzimmer');window.location.href = '?page=kalender'">Familienzimmer</button> 
+
+    <button class="bookingButton" id="gruppenzimmerButton" onclick="changeRoomValue('Gruppenzimmer');window.location.href = '?page=kalender'">Gruppenzimmer</button>
+    <button class="bookingButton" id="luxusSuiteButton" onclick="changeRoomValue('LuxusSuite');window.location.href = '?page=kalender'">Luxus-Suite</button>
+</div>
