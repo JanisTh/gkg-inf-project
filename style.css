@@ -3,12 +3,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color:  #353935;
-    color: #03A062;
+    /*background-color:  #353935;
+    color: #03A062;*/
 }
 
 .menu { /*evtl. für später*/
-    
+    height: 50%;
 }
 
 .page { /*evtl. für später*/
@@ -18,6 +18,7 @@ body {
 .footer {
     background-color: #a9a9a9;
     color: black;
+    height: 100px;
 }
 
 .footer a{
@@ -32,206 +33,7 @@ body {
     justify-content: space-between;
 }
 
-.textBox{
-    background-color: gray;
-    margin-left: 7%;
-    margin-right: 7%;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-right: 1%;
 
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-
-
-    width: 83%;
-    height: auto;
-
-    color: black;
-}
-.homePageVideo{
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
-    height: auto;
-    position: absolute;
-    z-index: -2;
-}
-
-.unserTeamHeader{
-    text-align: center;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-.portraitRow1{
-    width: 60%;
-    height: fit-content;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-.portraitRow1 img{
-    height: auto;
-    width: 32%;
-}
-
-.portraitRow2{
-    width: 60%;
-    height: fit-content;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-.portraitRow2 img{
-    height: auto;
-    width: 32%;
-}
-
-.portraitRow3{
-    width: 60%;
-    height: fit-content;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-.portraitRow3 img{
-    height: auto;
-    width: 32%;
-}
-
-
-.flexRows1 {
-    width: 60%;
-    height: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-
-    display: flex;
-    flex-grow: 1;
-    justify-content:space-around;  
-}
-.flexRows2 {
-    width: 60%;
-    height: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-
-    display: flex;
-    flex-grow: 1;
-    justify-content:space-around;
-}
-.flexRows3 {
-    width: 60%;
-    height: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-
-    display: flex;
-    flex-grow: 1;
-    justify-content:space-around;
-}
-
-.angebotButtons details{
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: left;
-}
-
-.angebotButtons{
-    text-align: center;
-}
 
 /*https://blog.bitsrc.io/pure-css-to-make-a-button-shine-and-gently-change-colors-over-time-5b685d9c6a7e*/
 /*https://github.com/paigen11/paigeniedringhaus.com/blob/master/src/components/Subscribe/Subscribe.scss#L14*/
-@keyframes TransitioningBackground{
-    0% {
-        background-position: 1%, 0%;
-    }
-    50% {
-        background-position: 99%, 100%;
-    }
-    100% {
-        background-position: 1%, 0%;
-    }
-}
-
-.basicButton    {
-    width: 60%;
-    height: 20%;
-    border-radius: 5px;
-    border-color: #c4aead;
-    color: black;
-
-    text-align: center;
-    font-size: 5rem;
-
-    overflow: hidden;
-    background-image: linear-gradient(270deg, #dacfac, #a7a297);/*https://html-color.codes/gold*/
-    background-size: 200%, 200%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-}
-.advancedButton{
-    width: 60%;
-    height: 20%;
-    border-radius: 5px;
-    border-color: #838996;
-    color: black;
-
-    text-align: center;
-    font-size: 5rem;
-
-    overflow: hidden;
-    background-image: linear-gradient(270deg, #e5e4e2, #bfc1c2, #c0c0c0, #838996, #c4aead);/*https://html-color.codes/gold*/
-    background-size: 200%, 200%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-}
-.proButton{
-    width: 60%;
-    height: 20%;
-    border-radius: 5px;
-    border-color: #daa520;
-    color: black;
-
-    text-align: center;
-    font-size: 5rem;
-
-    overflow: hidden;
-    background-image: linear-gradient(270deg, #f8de7e, #ffd700, #daa520);/*https://html-color.codes/gold*/
-    background-size: 200%, 200%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-}
-.elonMuskButton{
-    width: 60%;
-    height: 20%;
-    border-radius: 5px;
-    border-color: #cf24fa;
-    color: black;
-
-    text-align: center;
-    font-size: 5rem;
-
-    overflow: hidden;
-    background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);;/*https://html-color.codes/gold*/
-    background-size: 200%, 200%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-}
-
-.angebotButtons details button{
-    width: 20%;
-    height: 40px;
-    color: red;
-    border-color: red;
-
-    overflow: hidden;
-    background-image: linear-gradient(270deg, #f8de7e, #ffd700, #daa520);/*https://html-color.codes/gold*/
-    background-size: 200%, 200%;
-    animation: TransitioningBackground 10s ease infinite;
-    transition: 0.6s;
-}
