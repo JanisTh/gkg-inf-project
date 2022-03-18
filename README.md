@@ -27,4 +27,7 @@ Durch Github als Knotenpunkt für die Gemeinsame Arbeit wurde der einfache Daten
 
 
 
+Idee:
+
+Durch die Erfindung eines imaginären Gasthauses und der Erstellung dessen Webseite sollte der Eindruck entstehen, dass man sich auf einer regulären Webseite eines Hotels befindet.
 
