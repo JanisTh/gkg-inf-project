@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding:  0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 0px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 0px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Calendar</h1>
+
+<div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      August<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Di</li>
+  <li>Mi</li>
+  <li>Do</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>So</li>
+</ul>
+
+<ul class="days">  
+  <li><button id="btn1" onclick="changeColor(1, 'red');">1</button></li>
+  <li><button id="btn2" onclick="changeColor(2, 'red');">2</button></li>
+  <li><button id="btn3" onclick="changeColor(3, 'red');">3</button></li>
+  <li><button id="btn4" onclick="changeColor(4, 'red');">4</button></li>
+  <li><button id="btn5" onclick="changeColor(5, 'red');">5</button></li>
+  <li><button id="btn6" onclick="changeColor(6, 'red');">6</button></li>
+  <li><button id="btn7" onclick="changeColor(7, 'red');">7</button></li>
+  <li><button id="btn8" onclick="changeColor(8, 'red');">8</button></li>
+  <li><button id="btn9" onclick="changeColor(9, 'red');">9</button></li>
+  <li><button id="btn10" onclick="changeColor(10, 'red');">10</button></li>
+  <li><button id="btn11" onclick="changeColor(11, 'red');">11</button></li>
+  <li><button id="btn12" onclick="changeColor(12, 'red');">12</button></li>
+  <li><button id="btn13" onclick="changeColor(13, 'red');">13</button></li>
+  <li><button id="btn14" onclick="changeColor(14, 'red');">14</button></li>
+  <li><button id="btn15" onclick="changeColor(15, 'red');">15</button></li>
+  <li><button id="btn16" onclick="changeColor(16, 'red');">16</button></li>
+  <li><button id="btn17" onclick="changeColor(17, 'red');">17</button></li>
+  <li><button id="btn18" onclick="changeColor(18, 'red');">18</button></li>
+  <li><button id="btn19" onclick="changeColor(19, 'red');">19</button></li>
+  <li><button id="btn20" onclick="changeColor(20, 'red');">20</button></li>
+  <li><button id="btn21" onclick="changeColor(21, 'red');">21</button></li>
+  <li><button id="btn22" onclick="changeColor(22, 'red');">22</button></li>
+  <li><button id="btn23" onclick="changeColor(23, 'red');">23</button></li>
+  <li><button id="btn24" onclick="changeColor(24, 'red');">24</button></li>
+  <li><button id="btn25" onclick="changeColor(25, 'red');">25</button></li>
+  <li><button id="btn26" onclick="changeColor(26, 'red');">26</button></li>
+  <li><button id="btn27" onclick="changeColor(27, 'red');">27</button></li>
+  <li><button id="btn28" onclick="changeColor(28, 'red');">28</button></li>
+  <li><button id="btn29" onclick="changeColor(29, 'red');">29</button></li>
+  <li><button id="btn30" onclick="changeColor(30, 'red');">30</button></li>
+  <li><button id="btn31" onclick="changeColor(31, 'red');">31</button></li>
+</ul>
+
+</body>
+</html>

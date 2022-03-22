@@ -72,3 +72,10 @@ function changeRoomValue(value) {
     room = value;
     console.log("room changed to " + value);
 }
+
+
+function changeColor(btnNmbr, color) {
+    var btn = document.getElementById('btn' + btnNmbr.toString());
+    console.log(btn);
+    btn.style.backgroundColor = color;
+}
