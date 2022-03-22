@@ -1,14 +1,23 @@
 /* Remove the standard margin/padding of the html body */
 
 body {
-    margin: 0;
+    margin: 20px;
     padding: 0;
+    background-color: whitesmoke;
+    color: black;
     /*background-color:  #353935;
     color: #03A062;*/
 }
 
 .menu { /*evtl. für später*/
     height: 50%;
+    text-align: center;
+}
+.navigationButtons{
+    height: 50px;
+    width: 200px;
+    color: black; /*wird zu gray*/
+    background-color: lightgray;
 }
 
 .page { /*evtl. für später*/
