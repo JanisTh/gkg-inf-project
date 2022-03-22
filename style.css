@@ -16,8 +16,9 @@ body {
 .navigationButtons{
     height: 50px;
     width: 200px;
-    color: black; /*wird zu gray*/
-    background-color: lightgray;
+    color: black;
+    background-color: #6f9196;/*wird zu dunkelgrün*/
+    font-size: 20px;
 }
 
 .page { /*evtl. für später*/
@@ -28,6 +29,8 @@ body {
     background-color: #6f9196;
     color: black;
     height: 100px;
+    padding: 20px;
+    font-size: 17px;
 }
 
 .footer a{
