@@ -35,10 +35,21 @@ body {
 
 .footer a{
     text-align: left;
+    color: darkblue;
+}
+.footer a:link{
+    color: darkblue;
+}
+.footer a:visited{
+    color: darkorchid;
+}
+.footer a:hover{
+    font-size: large;
 }
 .footerFlexRow1{
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 .footerFlexRow2{
     display: flex;
