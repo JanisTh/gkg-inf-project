@@ -79,3 +79,10 @@ function changeColor(btnNmbr, color) {
     console.log(btn);
     btn.style.backgroundColor = color;
 }
+
+//Keller und erster Stock
+var nmbrOfGruppenzimmer = 4;
+var nmbrOfLuxuxSuites = 2;
+var nmbrOfFamilienzimmer = 25;
+var nmbrOfDoppelzimmer = 15;
+
