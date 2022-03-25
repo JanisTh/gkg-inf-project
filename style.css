@@ -31,6 +31,7 @@ body {
     height: 100px;
     padding: 20px;
     font-size: 17px;
+    position: relative;
 }
 
 .footer a{
@@ -46,17 +47,18 @@ body {
 .footer a:hover{
     font-size: large;
 }
-.footerFlexRow1{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.footerFlexRow2{
-    display: flex;
-    justify-content: space-between;
+
+#footnote{
+    /*background-color: aliceblue;*/
+    width: 30%;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
     text-align: right;
-    margin-top: 2%;
+    padding-right: 0.75%;
+    padding-bottom: 0.75%;
 }
+
 
 
 
