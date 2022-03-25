@@ -2,9 +2,19 @@
 
 *By Janis Lenny Julian*
 ## **Hotelbuchungsystem**
-### **Arbeitsplan:**
+### **Table of Contents:**
+<br></br>
+1. [Generelle Infos/Arbeitsplan](###Arbeitsplan:)
+2. [Beschreibung](###BeschreibungdesProjektes:)
+3. [Umsetzung/Arbeitsteilung](###Umsetzung/Arbeitsteilung:)
+4. [Idee](###Idee:)
+5. [Benutzung](###BenutzungderWebseite:)
+6. [Screenshots](###Screenshots:)
+7. [Fazit](###Fazit:)
 
 <br></br>
+
+### **Arbeitsplan:**
 
 * 29.11.21 Beginn des Projektes
 * 13.12.21 Anfang Aufbau des Grundgerüsts
@@ -24,7 +34,7 @@ Es war uns sehr wichtig dem Nutzer eine angenehme Erfahrung beim Nutzer der Webs
 
 <br></br>
 
-### **Umsetzung/ Arbeitsteilung:**
+### **Umsetzung/Arbeitsteilung:**
 
 Um maximalen Ertrag zu erreichen wurden die einzelnen Teilseiten an die jeweillig verfügbaren ArbeiterInformtik Spezialisten (Janis, Lenny, Julian) aufgeteilt. Es wurde zuerst ein solides Grundkonzept ausgearbeitet und in Skizzen festgehalten. 
 Durch Github als Knotenpunkt für die Gemeinsame Arbeit wurde der einfache Datenaustausch ermöglicht und in Visual Studio Code weiter umgesetzt.
