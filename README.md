@@ -58,6 +58,20 @@ Ihr Buchung ist nun bestätigt. Wir wünschen einen schönen Aufenthalt.
 <br></br>
 
 ### **Screenshots:**
+
+![ReiterWebseite.png](material/ReiterWebseite.png)
+*Abb.1:*
+
+Auf diesem Bild sieht man die Reiter der Webseite, der zu den einzelnen Unterseiten führt.
+Er wurden mit HMTL erstellt und mit CSS gestylet.
+
+<br></br>
+
+![Buchungsprozess.png](Material/Buchungsprozess.png)
+*Abb.2:*
+
+Auf diesem Bild erkennt man den Auswahlprozess der Zimmer zur Buchung.
+
 <br></br>
 
 ### **Fazit:**
