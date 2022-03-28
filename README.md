@@ -49,12 +49,17 @@ Durch die Erfindung eines imaginären Gasthauses und der Erstellung dessen Webse
 
 ### **Benutzung der Webseite:**
 
+Öffnen: Um die Webseite zu öffnen, müssen sie mit Rechtsklick über "index.html" zu "Live-server" navigieren und ihn in ihrem Browser(bevorzugt Chromium basierte Browser) öffnen.
+Für den ganzen Prozess wird vorerst das Programm Visual Studio Code, mit dem das Projekt erstellt wurde bzw. Github.com ,über was das Projekt angeschaut oder heruntergeladen werden kann, gebraucht.
+Das Projekt kann auch auf Github.com über die Vorschau angeschaut werden.
+
 Wenn sie die Webseite zum ersten Mal besuchen, landen sie zuerst auf der schönen Homepage wo sie bereits einige Informationen zum Hotel erwarten. Von hier aus können sie sich Allgemeines über das Hotel anschauen und einige Informationen zu Zimmern und Mitarbeitern bekommen.
 Sollten sie sich entscheiden bei uns logieren zu wollen kommen sie unter dem Reiter "Buchen" direkt zur Zimmerauswahl wo sie das für sie am Besten passende Zimmer mit nur einem Klick auswählen können. Daraufhin werden 
 sie dann sofort auf zur Datenauswahl weitergeleitet. Bei der Auswahl wird ihnen auch gleich mitgeteilt, inwiefern 
 ihr Zimmer an den gewünschten Daten verfügbar ist. Sollte alles nach ihrer Zufriedenheit funktionieren, können sie sich die finale Bestellübersicht anzeigen lassen und die Buchung abschicken, indem sie den "Abschicken" Button drücken.
 Wenn dieser Vorgang nun verarbeitet wurde erhalten sie die Bestellbestätigungsübersicht.
 Ihr Buchung ist nun bestätigt. Wir wünschen einen schönen Aufenthalt.
+
 <br></br>
 
 ### **Screenshots:**
@@ -63,7 +68,7 @@ Ihr Buchung ist nun bestätigt. Wir wünschen einen schönen Aufenthalt.
 *Abb.1:*
 
 Auf diesem Bild sieht man die Reiter der Webseite, der zu den einzelnen Unterseiten führt.
-Er wurden mit HMTL erstellt und mit CSS gestylet.
+Er wurde mit HMTL erstellt und mit CSS gestylet.
 
 <br></br>
 
