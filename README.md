@@ -11,6 +11,7 @@
 5. [Benutzung](###BenutzungderWebseite:)
 6. [Screenshots](###Screenshots:)
 7. [Fazit](###Fazit:)
+8. [Quellen](###quellen:)
 
 
 
@@ -84,4 +85,10 @@ Auf diesem Bild erkennt man den Auswahlprozess der Zimmer zur Buchung.
 
 Zum Schluss lässt sich sagen, dass wir das Projekt mit einem zufriedensstellenden Ergebnis beendet haben. Dieses System, sowie die Webseite kann aber natürlich stetig weiterentwickelt und auch noch verbessert werden, was wir in Zukunft sicher noch angehen werden.
 
- 
+<br></br>
+
+### **Quellen:** 
+
+* [Inspiration Readme](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [Konsultation für Programmierfragen(CSS)](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [Konsultation für Programmierfragen(JavaScript)](https://developer.mozilla.org/de/docs/Web/JavaScript/About_JavaScript)
