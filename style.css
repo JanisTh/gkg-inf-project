@@ -35,7 +35,11 @@ body {
     position: relative;
     text-align: left;
 }
-
+.footer img{
+    height: 12%;
+    width: 12%;
+    align-items: center;
+}
 .footer a{
     text-align: left;
     color: darkblue;
