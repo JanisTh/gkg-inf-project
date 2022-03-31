@@ -78,6 +78,7 @@ body {
 }
 #footnote{ /*Grösse und Position der Fussnote*/
     /*background-color: aliceblue;*/
+    z-index: 1;
     position: absolute;
     right: 0%;
     bottom: 0%;
