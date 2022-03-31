@@ -4,7 +4,7 @@
         left: 25%;
         padding: 0;
         height: 0;
-        padding-top: 50%;
+        padding-top: 50%;           /*Definiert die Eigenschaften des Reiters "buchen"*/
         background-color: aqua;
         width: 50%;
         margin-top: 10vh;
@@ -16,7 +16,7 @@
         position: absolute;
         border: 0;
         padding: 0px;
-        margin: 0px;
+        margin: 0px;                /* Definiert die Grundeigenschaften der vier buchbaren Zimmer-Buttons*/
         width: 50%;
         height: 50%;
         font-family: Helvetica, Arial, sans-serif;
@@ -26,7 +26,7 @@
     }
     #doppelzimmerButton{
         top: 0;
-        left: 0;
+        left: 0;                    /*Erstellt den Doppelzimmerbutton mit dem passenden Bild*/
         background-image: url(material/Bett2erZimmer.jpg);
         background-size:cover;
     }
@@ -34,29 +34,29 @@
         top: 0;
         right: 0;
         background-image: url(material/Familienzimmer.jpg);
-        background-size: 135%;
+        background-size: 135%;      /*Erstellt den Familienzimmerbutton mit dem passenden Bild*/
         background-position: right;
     }
     #gruppenzimmerButton{
         bottom: 0;
         left: 0;
         background-image: url(material/10erZimmer.jpg);
-        background-size: cover;
+        background-size: cover;     /*Erstellt den Gruppenzimmerbutton mit dem passenden Bild*/
         background-position: bottom left;
     }
     #luxusSuiteButton{
         bottom: 0;
-        right: 0;
+        right: 0;                   /*Erstellt den Luxussuitebutton mit passenden Bild*/ 
         background-image: url(material/LuxusSuite.jpg);
         background-size:cover;
     }
 </style>
 
 
-<div class="buchenParentBox">
+<div class="buchenParentBox"> <!-- Verlinkung zu CSS um die Buttons zu stylen-->
     <button class="bookingButton" id="doppelzimmerButton" onclick="changeRoomValue('Doppelzimmer');window.location.href = '?page=kalender'">Doppelzimmer</button>
     <button class="bookingButton" id="familienzimmerButton" onclick="changeRoomValue('Familienzimmer');window.location.href = '?page=kalender'">Familienzimmer</button> 
-
+    <!-- Besagt, dass bei Click auf einen Button, die Weiterleitung zum Buchungsprozesseingeleitet wird.-->
     <button class="bookingButton" id="gruppenzimmerButton" onclick="changeRoomValue('Gruppenzimmer');window.location.href = '?page=kalender'">Gruppenzimmer</button>
     <button class="bookingButton" id="luxusSuiteButton" onclick="changeRoomValue('LuxusSuite');window.location.href = '?page=kalender'">Luxus-Suite</button>
 </div>
