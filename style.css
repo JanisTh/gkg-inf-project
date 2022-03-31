@@ -8,13 +8,14 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /*background-color:  #353935;
     color: #03A062;*/
+    /* Allgemeine Seitenübergreifende Textanpassungen, wie z.B. Textart*/
 }
 
-.menu { /*evtl. für später*/
+.menu { /*Grösse und Position des Menu*/
     height: 50%;
     text-align: center;
 }
-.navigationButtons{
+.navigationButtons{ /*Einstellungen(Farbe, Grösse usw.) der Buttons um die Seiten zu wechseln*/
     height: 50px;
     width: 200px;
     color: black;
@@ -26,7 +27,7 @@ body {
 
 }
 
-.footer {
+.footer { /*Allgemeine Footer Einstellungen, wie background-color, Grösse, Farbe und Grösse des Textes und Position*/
     background-color: #6f9196;
     color: black;
     height: 100px;
@@ -35,26 +36,31 @@ body {
     position: relative;
     text-align: left;
 }
-.footer img{
+
+.footer img{ /*Grösse und Position vom Bild im Footer*/
     height: 12%;
     width: 12%;
     align-items: center;
 }
-.footer a{
+
+.footer a{ /*Allgemeine Linkeinstellungen*/
     text-align: left;
     color: darkblue;
 }
-.footer a:link{
+
+.footer a:link{ /*Farbe Link wenn dieser noch nicht besucht wurde*/
     color: darkblue;
 }
-.footer a:visited{
+
+.footer a:visited{ /* Farbe Link wenn man den Link besucht hat*/
     color: darkorchid;
 }
-.footer a:hover{
+
+.footer a:hover{ /* Änderung der Grösse des Links wenn man über ihm hovert*/
     font-size: large;
 }
 
-#footnote{
+#footnote{ /*Gösse und Position der Fussnote*/
     /*background-color: aliceblue;*/
     width: 30%;
     position: absolute;

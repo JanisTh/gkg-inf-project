@@ -5,6 +5,7 @@
         margin: 20px;
         /*standart Einstellungen der Seite*/
     }
+
 .flex-container {
   display: flex;
   background-color: whitesmoke;
@@ -18,6 +19,7 @@
   line-height: 25px;
   font-size: 16px;
 }
+/*Masse der Flex-items*/
 
 img {
   width:550px;
@@ -25,28 +27,32 @@ img {
   margin: 20px;
   align-content: center;
 }
+/*Grösse der Bilder*/
+
 h1 {
   text-align: center;
 }
+
 .textbox{
   margin-top: 3%;
   margin-bottom: 3%;
 }
+/*Style Textbox und Darstellung des Textes*/
+
 </style>
 
-<div class="textbox">
+
+<div class="textbox"> <!--div um den ganzen Text zusammen Formatieren zu können-->
 <h1>Berghotel zum Baer Angebot</h1>
 
-<div class="flex-container">
+<div class="flex-container"> <!--Flex-container und Flex-items um Bild und Text nebeneinander darzustellen-->
 <div class="flex-item"><p><h2>Doppelzimmer</h2>
 <br>Unser gut ausgestattetes Doppelzimmer bietet genügend Platz für zwei Personen. Es ist mit einem Doppelbett, einem Fernseher, einer Minibar und einem Schreibtisch versehen. Zudem hat es ein grosses Badezimmer mit Toilette, einer Dusche und einem Lavabo. Das Zimmer bietet einen atemberaubenden Ausblick auf den Säntis. Täglich steht ihnen ein ausgewogenes Frühstück in unserem Morgensaal zur Verfügung, welches im Preis inbegriffen ist. WIFI ist selbstverständlich für jeden unsere Gäste verfügbar und gratis. Damit sie sich stehts wohlfühlen wird ihr Zimmer auf Wunsch täglich gereinigt.</br>
 </p></div>
-<div class="flex-item"><img src="material/Bett2erZimmer.jpg"></img></div>
+<div class="flex-item"><img src="material/Bett2erZimmer.jpg"></img></div> <!--Bild mit Relativ Path eingefügt-->
 </div>
 
-<!-- Kommentar -->
-
-<div class="flex-container">
+<div class="flex-container"> <!--Jedes mal neue Flex-container wenn es eine neue Zeile gibt-->
 <div class="flex.item"><img src="material\Familienzimmer.jpg"></img></div>
 <div class="flex-item"><p><h2>Familienzimmer</h2>
 <br>Das Familienzimmer in unserem Hotel bietet Platz für eine Familie mit zwei Kindern. Im Zimmer befinden sich zwei Einzelbetten und ein Doppelbett. Zur Ausstattung dieses Zimmers gehören auch ein Fernseher, eine Minibar, ein Sofa und ein Schreibtisch. Das Zimmer hat ein Badezimmer welches mit einer Toilette, einem Lavabo und einer Dusche versehen ist. Das Frühstück ist auch bei diesem Angebot inbegriffen und findet in unserem wunderschönen Morgensaal statt. Dieses Zimmer bietet zudem auch einen Balkon mit atemberaubendem Bergblick. WIFI ist selbstverständlich für jeden unsere Gäste verfügbar und gratis. Damit sie sich stehts wohlfühlen wird ihr Zimmer auf Wunsch täglich gereinigt. </br>
