@@ -67,17 +67,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 ///////////////////
 
 var room;
-var focusRoom;
+var focusDay;
+var currentlyHovered;
 
 function changeRoomValue(value) {
     room = value;
     console.log("room changed to " + value);
 }
-function changeFocusRoom(btnNmbr) {
-    console.log("btn" + btnNmbr);
-    focusRoom = btnNmbr;
+function changeFocusDay(btnNmbr) {
+    focusDay = "btn" + btnNmbr;
+    console.log("");
 }
-
+function setHoveredElement(btnNmbr){
+    currentlyHovered = "btn" + btnNmbr;
+}
 
 function changeColor(btnNmbr, color) {
     var btn = document.getElementById('btn' + btnNmbr.toString());
