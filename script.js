@@ -67,10 +67,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 ///////////////////
 
 var room;
+var focusRoom;
 
 function changeRoomValue(value) {
     room = value;
     console.log("room changed to " + value);
+}
+function changeFocusRoom(btnNmbr) {
+    console.log("btn" + btnNmbr);
+    focusRoom = btnNmbr;
 }
 
 
@@ -79,6 +84,7 @@ function changeColor(btnNmbr, color) {
     console.log(btn);
     btn.style.backgroundColor = color;
 }
+
 
 //Keller und erster Stock
 var nmbrOfGruppenzimmer = 4;
