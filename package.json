@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JanisTh/gkg-inf-project/issues"
   },
-  "homepage": "https://github.com/JanisTh/gkg-inf-project#readme"
+  "homepage": "https://github.com/JanisTh/gkg-inf-project#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
