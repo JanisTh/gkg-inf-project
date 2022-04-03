@@ -70,19 +70,34 @@ var room;
 var focusDay;
 var currentlyHovered;
 
-function changeRoomValue(value) {
+function changeRoomValue(value) {//saves the kind of room you wanted to book
     room = value;
     console.log("room changed to " + value);
 }
-function changeFocusDay(btnNmbr) {
+function changeFocusDay(btnNmbr) {//saves the currently focused day 
+    if (focusDay != undefined) {//checks if theres already a focused day and resets the old one if thats the case
+        document.getElementById(focusDay).style.backgroundColor = "#e1e1e1";
+        document.getElementById(focusDay).style.borderColor = "#777";
+    }
     focusDay = "btn" + btnNmbr;
-    console.log("");
 }
-function setHoveredElement(btnNmbr){
+function setHoveredElement(btnNmbr){ //saves the currently hovered day, if you stop hovering it without hovering a new one it still considers it hovered
     currentlyHovered = "btn" + btnNmbr;
+
+    if (focusDay != undefined && currentlyHovered != focusDay) { //changes the hovered days color if you've already focused a day
+        document.getElementById(currentlyHovered).style.backgroundColor = "#1abc9c";
+        document.getElementById(currentlyHovered).style.borderColor = "#005a5c";
+    }
+}
+function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hovering it
+    let btn = "btn" + btnNmbr;
+    if (btn != focusDay) {
+        document.getElementById(btn).style.backgroundColor = "#e1e1e1";
+        document.getElementById(btn).style.borderColor = "#777";
+    }
 }
 
-function changeColor(btnNmbr, color) {
+function changeColor(btnNmbr, color) {//chages color of a given day 
     var btn = document.getElementById('btn' + btnNmbr.toString());
     console.log(btn);
     btn.style.backgroundColor = color;

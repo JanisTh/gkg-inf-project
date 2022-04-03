@@ -111,8 +111,13 @@ body {font-family: Verdana, sans-serif;}
 </ul>
 
 <style>
+  .days button{
+    background-color: #e1e1e1;
+    border-color: #777;
+  }
   .days button:hover{
-    background-color: #D3D3D3;
+    background-color: #acacac;
+    border-color: #777;
   }
   .days button:focus{
     background-color: #1abc9c;
@@ -120,37 +125,37 @@ body {font-family: Verdana, sans-serif;}
   }
 </style>
 <ul class="days">
-  <li><button id="btn1" onclick="changeFocusDay(1);" onmouseover="setHoveredElement(1);">1</button></li>
-  <li><button id="btn2" onclick="changeFocusDay(2);" onmouseover="setHoveredElement(2);">2</button></li>
-  <li><button id="btn3" onclick="changeFocusDay(3);" onmouseover="setHoveredElement(3);">3</button></li>
-  <li><button id="btn4" onclick="changeFocusDay(4);" onmouseover="setHoveredElement(4);">4</button></li>
-  <li><button id="btn5" onclick="changeFocusDay(5);" onmouseover="setHoveredElement(5);">5</button></li>
-  <li><button id="btn6" onclick="changeFocusDay(6);" onmouseover="setHoveredElement(6);">6</button></li>
-  <li><button id="btn7" onclick="changeFocusDay(7);" onmouseover="setHoveredElement(7);">7</button></li>
-  <li><button id="btn8" onclick="changeFocusDay(8);" onmouseover="setHoveredElement(8);">8</button></li>
-  <li><button id="btn9" onclick="changeFocusDay(9);" onmouseover="setHoveredElement(9);">9</button></li>
-  <li><button id="btn10" onclick="changeFocusDay(10);" onmouseover="setHoveredElement(10);">10</button></li>
-  <li><button id="btn11" onclick="changeFocusDay(11);" onmouseover="setHoveredElement(11);">11</button></li>
-  <li><button id="btn12" onclick="changeFocusDay(12);" onmouseover="setHoveredElement(12);">12</button></li>
-  <li><button id="btn13" onclick="changeFocusDay(13);" onmouseover="setHoveredElement(13);">13</button></li>
-  <li><button id="btn14" onclick="changeFocusDay(14);" onmouseover="setHoveredElement(14);">14</button></li>
-  <li><button id="btn15" onclick="changeFocusDay(15);" onmouseover="setHoveredElement(15);">15</button></li>
-  <li><button id="btn16" onclick="changeFocusDay(16);" onmouseover="setHoveredElement(16);">16</button></li>
-  <li><button id="btn17" onclick="changeFocusDay(17);" onmouseover="setHoveredElement(17);">17</button></li>
-  <li><button id="btn18" onclick="changeFocusDay(18);" onmouseover="setHoveredElement(18);">18</button></li>
-  <li><button id="btn19" onclick="changeFocusDay(19);" onmouseover="setHoveredElement(19);">19</button></li>
-  <li><button id="btn20" onclick="changeFocusDay(20);" onmouseover="setHoveredElement(20);">20</button></li>
-  <li><button id="btn21" onclick="changeFocusDay(21);" onmouseover="setHoveredElement(21);">21</button></li>
-  <li><button id="btn22" onclick="changeFocusDay(22);" onmouseover="setHoveredElement(22);">22</button></li>
-  <li><button id="btn23" onclick="changeFocusDay(23);" onmouseover="setHoveredElement(23);">23</button></li>
-  <li><button id="btn24" onclick="changeFocusDay(24);" onmouseover="setHoveredElement(24);">24</button></li>
-  <li><button id="btn25" onclick="changeFocusDay(25);" onmouseover="setHoveredElement(25);">25</button></li>
-  <li><button id="btn26" onclick="changeFocusDay(26);" onmouseover="setHoveredElement(26);">26</button></li>
-  <li><button id="btn27" onclick="changeFocusDay(27);" onmouseover="setHoveredElement(27);">27</button></li>
-  <li><button id="btn28" onclick="changeFocusDay(28);" onmouseover="setHoveredElement(28);">28</button></li>
-  <li><button id="btn29" onclick="changeFocusDay(29);" onmouseover="setHoveredElement(29);">29</button></li>
-  <li><button id="btn30" onclick="changeFocusDay(30);" onmouseover="setHoveredElement(30);">30</button></li>
-  <li><button id="btn31" onclick="changeFocusDay(31);" onmouseover="setHoveredElement(31);">31</button></li>
+  <li><button id="btn1" onclick="changeFocusDay(1);" onmouseover="setHoveredElement(1);" onmouseleave="makeElementUnhoveredAgain(1);">1</button></li>
+  <li><button id="btn2" onclick="changeFocusDay(2);" onmouseover="setHoveredElement(2);" onmouseleave="makeElementUnhoveredAgain(2);">2</button></li>
+  <li><button id="btn3" onclick="changeFocusDay(3);" onmouseover="setHoveredElement(3);" onmouseleave="makeElementUnhoveredAgain(3);">3</button></li>
+  <li><button id="btn4" onclick="changeFocusDay(4);" onmouseover="setHoveredElement(4);" onmouseleave="makeElementUnhoveredAgain(4);">4</button></li>
+  <li><button id="btn5" onclick="changeFocusDay(5);" onmouseover="setHoveredElement(5);" onmouseleave="makeElementUnhoveredAgain(5);">5</button></li>
+  <li><button id="btn6" onclick="changeFocusDay(6);" onmouseover="setHoveredElement(6);" onmouseleave="makeElementUnhoveredAgain(6);">6</button></li>
+  <li><button id="btn7" onclick="changeFocusDay(7);" onmouseover="setHoveredElement(7);" onmouseleave="makeElementUnhoveredAgain(7);">7</button></li>
+  <li><button id="btn8" onclick="changeFocusDay(8);" onmouseover="setHoveredElement(8);" onmouseleave="makeElementUnhoveredAgain(8);">8</button></li>
+  <li><button id="btn9" onclick="changeFocusDay(9);" onmouseover="setHoveredElement(9);" onmouseleave="makeElementUnhoveredAgain(9);">9</button></li>
+  <li><button id="btn10" onclick="changeFocusDay(10);" onmouseover="setHoveredElement(10);" onmouseleave="makeElementUnhoveredAgain(10);">10</button></li>
+  <li><button id="btn11" onclick="changeFocusDay(11);" onmouseover="setHoveredElement(11);" onmouseleave="makeElementUnhoveredAgain(11);">11</button></li>
+  <li><button id="btn12" onclick="changeFocusDay(12);" onmouseover="setHoveredElement(12);" onmouseleave="makeElementUnhoveredAgain(12);">12</button></li>
+  <li><button id="btn13" onclick="changeFocusDay(13);" onmouseover="setHoveredElement(13);" onmouseleave="makeElementUnhoveredAgain(13);">13</button></li>
+  <li><button id="btn14" onclick="changeFocusDay(14);" onmouseover="setHoveredElement(14);" onmouseleave="makeElementUnhoveredAgain(14);">14</button></li>
+  <li><button id="btn15" onclick="changeFocusDay(15);" onmouseover="setHoveredElement(15);" onmouseleave="makeElementUnhoveredAgain(15);">15</button></li>
+  <li><button id="btn16" onclick="changeFocusDay(16);" onmouseover="setHoveredElement(16);" onmouseleave="makeElementUnhoveredAgain(16);">16</button></li>
+  <li><button id="btn17" onclick="changeFocusDay(17);" onmouseover="setHoveredElement(17);" onmouseleave="makeElementUnhoveredAgain(17);">17</button></li>
+  <li><button id="btn18" onclick="changeFocusDay(18);" onmouseover="setHoveredElement(18);" onmouseleave="makeElementUnhoveredAgain(18);">18</button></li>
+  <li><button id="btn19" onclick="changeFocusDay(19);" onmouseover="setHoveredElement(19);" onmouseleave="makeElementUnhoveredAgain(19);">19</button></li>
+  <li><button id="btn20" onclick="changeFocusDay(20);" onmouseover="setHoveredElement(20);" onmouseleave="makeElementUnhoveredAgain(20);">20</button></li>
+  <li><button id="btn21" onclick="changeFocusDay(21);" onmouseover="setHoveredElement(21);" onmouseleave="makeElementUnhoveredAgain(21);">21</button></li>
+  <li><button id="btn22" onclick="changeFocusDay(22);" onmouseover="setHoveredElement(22);" onmouseleave="makeElementUnhoveredAgain(22);">22</button></li>
+  <li><button id="btn23" onclick="changeFocusDay(23);" onmouseover="setHoveredElement(23);" onmouseleave="makeElementUnhoveredAgain(23);">23</button></li>
+  <li><button id="btn24" onclick="changeFocusDay(24);" onmouseover="setHoveredElement(24);" onmouseleave="makeElementUnhoveredAgain(24);">24</button></li>
+  <li><button id="btn25" onclick="changeFocusDay(25);" onmouseover="setHoveredElement(25);" onmouseleave="makeElementUnhoveredAgain(25);">25</button></li>
+  <li><button id="btn26" onclick="changeFocusDay(26);" onmouseover="setHoveredElement(26);" onmouseleave="makeElementUnhoveredAgain(26);">26</button></li>
+  <li><button id="btn27" onclick="changeFocusDay(27);" onmouseover="setHoveredElement(27);" onmouseleave="makeElementUnhoveredAgain(27);">27</button></li>
+  <li><button id="btn28" onclick="changeFocusDay(28);" onmouseover="setHoveredElement(28);" onmouseleave="makeElementUnhoveredAgain(28);">28</button></li>
+  <li><button id="btn29" onclick="changeFocusDay(29);" onmouseover="setHoveredElement(29);" onmouseleave="makeElementUnhoveredAgain(29);">29</button></li>
+  <li><button id="btn30" onclick="changeFocusDay(30);" onmouseover="setHoveredElement(30);" onmouseleave="makeElementUnhoveredAgain(30);">30</button></li>
+  <li><button id="btn31" onclick="changeFocusDay(31);" onmouseover="setHoveredElement(31);" onmouseleave="makeElementUnhoveredAgain(31);">31</button></li>
 </ul>
 
 </body>
