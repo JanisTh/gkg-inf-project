@@ -1,0 +1,19 @@
+{
+  "name": "gkg-inf-project",
+  "version": "1.0.0",
+  "description": "*By Janis Lenny Julian*\r ## **Hotelbuchungsystem**\r ### **Table of Contents:**\r <br></br>\r 1. [Generelle Infos/Arbeitsplan](###Arbeitsplan:)\r 2. [Beschreibung](###BeschreibungdesProjektes:)\r 3. [Umsetzung/Arbeitsteilung](###Umsetzung/Arbeitsteilung:)\r 4. [Idee](###Idee:)\r 5. [Benutzung](###BenutzungderWebseite:)\r 6. [Screenshots](###Screenshots:)\r 7. [Fazit](###Fazit:)\r 8. [Quellen](###quellen:)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanisTh/gkg-inf-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanisTh/gkg-inf-project/issues"
+  },
+  "homepage": "https://github.com/JanisTh/gkg-inf-project#readme"
+}
