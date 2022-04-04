@@ -70,6 +70,26 @@ var room;
 var focusDay;
 var currentlyHovered;
 
+const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+var currentMonth = 3; //starts with april (4-1)
+
+var focusDaysDate;
+var currentlyHoveredDate;
+
+function synchroniseVariables() {
+    document.getElementsByClassName("htmlCurrentMonth").id = currentMonth;
+}
+function addDateTag(nmbrOfDays) {
+    var i = 1;
+    while (i <= nmbrOfDays) {
+        document.getElementById("btn" + i).date = i;
+        console.log(document.getElementById("btn" + i).date)
+        i = i + 1;
+    }
+}
+
+
 function changeRoomValue(value) {//saves the kind of room you wanted to book
     room = value;
     console.log("room changed to " + value);
