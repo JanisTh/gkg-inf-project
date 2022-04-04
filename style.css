@@ -6,28 +6,28 @@ body {
     background-color: whitesmoke;
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /*background-color:  #353935;
-    color: #03A062;*/
     /*Allgemeine Seitenübergreifende Textanpassungen, wie z.B. Textart*/
 }
 
-.menu { /*Grösse und Position des Menus*/
+.menu { 
     height: 50%;
     text-align: center;
+    /*Grösse und Position des Menus*/
 }
-.navigationButtons{ /*Einstellungen der Buttons (Farbe, Grösse usw.) um die Seiten zu wechseln*/
+.navigationButtons{
     height: 50px;
     width: 17%;
     color: black;
     background-color: #6f9196;/*Wird zu dunkelgrün*/
     font-size: 130%;
+    /*Einstellungen der Buttons (Farbe, Grösse usw.) um die Seiten zu wechseln*/
 }
 
 .page { /*evtl. für später*/
 
 }
 
-.footer { /*Allgemeine Footer Einstellungen, wie background-color, Grösse, Farbe und Grösse des Textes und Position*/
+.footer { 
     background-color: #6f9196;
     color: black;
     height: 10vh;
@@ -35,13 +35,15 @@ body {
     font-size: 17px;
     position: relative;
     text-align: left;
+    /*Allgemeine Footer Einstellungen, wie background-color, Grösse, Farbe und Grösse des Textes und Position*/
 }
 
-/*die 3 link objekte, position: absolute; notwendig, damit sie sich beim hovern nicht verschieben*/
+
 #footerLink1{
-    position: absolute;
+    position: absolute; /*position: "absolute" ist notwendig, damit sie sich beim hovern nicht verschieben*/
     left: 2%;
     top: 18%;
+    /*Regeln die Position der Links*/
 }
 #footerLink2{
     position: absolute;
@@ -53,21 +55,25 @@ body {
     left: 2%;
     top: 65%;
 }
-.footer a{ /*Allgemeine Linkeinstellungen*/
+.footer a{ 
     font-size: 100%;
     color: darkblue;
+    /*Allgemeine Linkeinstellungen*/
 }
 
-.footer a:link{ /*Farbe, Link, wenn dieser noch nicht besucht wurde*/
+.footer a:link{ 
     color: darkblue;
+    /*Farbe, Link, wenn dieser noch nicht besucht wurde*/
 }
 
-.footer a:visited{ /*Farbe, Link, wenn man den Link besucht hat*/
+.footer a:visited{ 
     color: darkorchid;
+    /*Farbe, Link, wenn man den Link besucht hat*/
 }
 
-.footer a:hover{ /*Änderung der Grösse des Links wenn man über ihn hovert*/
+.footer a:hover{ 
     font-size: 110%;
+    /*Änderung der Grösse des Links wenn man über ihn hovert*/
 }
 
 #gkgLogo img{
@@ -76,8 +82,7 @@ body {
     right: 0%;
     top: 0%;
 }
-#footnote{ /*Grösse und Position der Fussnote*/
-    /*background-color: aliceblue;*/
+#footnote{ 
     z-index: 1;
     position: absolute;
     right: 0%;
@@ -85,6 +90,7 @@ body {
     text-align: right;
     padding-right: 0.75%;
     padding-bottom: 0.75%;
+    /*Grösse und Position der Fussnote*/
 }
 
 
