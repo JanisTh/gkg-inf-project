@@ -90,7 +90,7 @@ function setHoveredElement(btnNmbr){ //saves the currently hovered day, if you s
     }
 }
 function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hovering it
-    let btn = "btn" + btnNmbr;
+    const btn = "btn" + btnNmbr;
     if (btn != focusDay) {
         document.getElementById(btn).style.backgroundColor = "#e1e1e1";
         document.getElementById(btn).style.borderColor = "#777";
