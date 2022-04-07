@@ -72,7 +72,7 @@ var currentlyHovered;
 
 const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var currentMonth = 3; //starts with april (4-1)
+var currentMonth = 4; //starts with april (4-1)
 
 var focusDaysDate;
 var currentlyHoveredDate;
@@ -80,12 +80,23 @@ var currentlyHoveredDate;
 function synchroniseVariables() {
     document.getElementsByClassName("htmlCurrentMonth").id = currentMonth;
 }
-function addDateTag(nmbrOfDays) {
+
+function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array bis zur Spalte X (x wird nicht addiert)
+    var i = 0;
+    var container = 0;
+    while (i < x) {
+        container += monthsNmbrOfDays[i];
+        i += 1;
+    }
+    return container;
+}
+
+function addDateTag() {
     var i = 1;
-    while (i <= nmbrOfDays) {
-        document.getElementById("btn" + i).date = i;
+    while (i <= monthsNmbrOfDays[currentMonth]) {
+        document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
         console.log(document.getElementById("btn" + i).date)
-        i = i + 1;
+        i += 1;
     }
 }
 
@@ -107,8 +118,10 @@ function setHoveredElement(btnNmbr){ //saves the currently hovered day, if you s
     if (focusDay != undefined && currentlyHovered != focusDay) { //changes the hovered days color if you've already focused a day
         document.getElementById(currentlyHovered).style.backgroundColor = "#1abc9c";
         document.getElementById(currentlyHovered).style.borderColor = "#005a5c";
+
     }
 }
+
 function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hovering it
     const btn = "btn" + btnNmbr;
     if (btn != focusDay) {

@@ -83,22 +83,11 @@ body {font-family: Verdana, sans-serif;}
 @media screen and (max-width: 290px) {
   .weekdays li, .days li {width: 12.2%;}
 }
+#monthHeader{
+  margin: 0%;
+  padding: 0%;
+}
 </style>
-
-<div class="htmlCurrentMonth" id="3"></div>
-<div class="htmlMonthsNmbrOfDays1" id="31"></div>
-<div class="htmlMonthsNmbrOfDays2" id="28"></div>
-<div class="htmlMonthsNmbrOfDays3" id="31"></div>
-<div class="htmlMonthsNmbrOfDays4" id="30"></div>
-<div class="htmlMonthsNmbrOfDays5" id="31"></div>
-<div class="htmlMonthsNmbrOfDays6" id="30"></div>
-<div class="htmlMonthsNmbrOfDays7" id="31"></div>
-<div class="htmlMonthsNmbrOfDays8" id="31"></div>
-<div class="htmlMonthsNmbrOfDays9" id="30"></div>
-<div class="htmlMonthsNmbrOfDays10" id="31"></div>
-<div class="htmlMonthsNmbrOfDays11" id="30"></div>
-<div class="htmlMonthsNmbrOfDays12" id="31"></div>
-
 </head>
 <body>
 
@@ -109,8 +98,8 @@ body {font-family: Verdana, sans-serif;}
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>
     <li>
-      August<br>
-      <span style="font-size:18px">2021</span>
+      <div>April</div>
+      <br><span style="font-size:18px">2021</span></br>
     </li>
   </ul>
 </div>
@@ -172,6 +161,6 @@ body {font-family: Verdana, sans-serif;}
   <li><button id="btn30" onclick="changeFocusDay(30);" onmouseover="setHoveredElement(30);" onmouseleave="makeElementUnhoveredAgain(30);">30</button></li>
   <li><button id="btn31" onclick="changeFocusDay(31);" onmouseover="setHoveredElement(31);" onmouseleave="makeElementUnhoveredAgain(31);">31</button></li>
 </ul>
-
+<button onclick="addDateTag();"></button>
 </body>
 </html>
