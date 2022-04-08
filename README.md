@@ -1,6 +1,6 @@
 # Dokumentation Informatik Projekt 2
 
-*By Janis Lenny Julian*
+*By Janis, Lenny, Julian*
 ## **Hotelbuchungsystem**
 ### **Table of Contents:**
 <br></br>
@@ -71,7 +71,7 @@ Ihr Buchung ist nun bestätigt. **Wir wünschen einen schönen Aufenthalt!**
 *Abb.1:*
 
 Auf diesem Bild sieht man die Reiter der Webseite, die zu den einzelnen Unterseiten führen.
-sie wurden mit HMTL erstellt und mit CSS gestylet.
+Die Reiter wurden mit HMTL erstellt und mit CSS gestylet.
 
 <br></br>
 
