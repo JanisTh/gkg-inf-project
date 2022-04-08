@@ -69,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 var room;
 var focusDay; //speichert die ID des ausgew채hlten Tags als String
 var currentlyHovered; //speichert die ID des 체berhoverten Tags als String
-//const allBtns = ["btn1","btn2","btn3","btn4","btn5","btn6","btn7","btn8","btn9","btn10","btn11","btn12","btn13","btn14","btn15","btn16","btn17","btn18","btn19","btn20","btn21","btn22","btn23","btn24","btn25","btn26","btn27","btn28","btn29","btn30","btn31"];
-//var currentlyInBetween = [];
 
 const months = ["Januar", "Februar", "M채rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -123,7 +121,6 @@ function resetAllButtons() {//setzt die Farbe aller nicht ausgebuchten Tage zur�
         }
         i += 1;
     }
-    currentlyInBetween.length = 0;
 }
 
 function coloriseDaysBetween() { //f채rbt alle Tage zwischen dem ausgew채hlten und dem 체berhoverten Tag
@@ -136,20 +133,16 @@ function coloriseDaysBetween() { //f채rbt alle Tage zwischen dem ausgew채hlten u
         while (i < endPoint.date - startPoint.date) {
             var btnDate = startPoint.date + i;
             getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
-            currentlyInBetween.push(getElementByDate(btnDate));
             i += 1;
         }
-        console.log(currentlyInBetween);
     }
     else if (startPoint.date > endPoint.date) {
         var ii = 1;
         while (ii < startPoint.date - endPoint.date) {
             var btnDate = endPoint.date + ii;
             getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
-            currentlyInBetween.push(getElementByDate(btnDate));
             ii += 1;
         }
-        currentlyInBetween.push(getElementByDate(btnDate));
     }
 }
 
