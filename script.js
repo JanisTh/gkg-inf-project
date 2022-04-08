@@ -67,8 +67,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 ///////////////////
 
 var room;
-var focusDay;
-var currentlyHovered;
+var focusDay; //speichert die ID des ausgewählten Tags als String
+var currentlyHovered; //speichert die ID des überhoverten Tags als String
+//const allBtns = ["btn1","btn2","btn3","btn4","btn5","btn6","btn7","btn8","btn9","btn10","btn11","btn12","btn13","btn14","btn15","btn16","btn17","btn18","btn19","btn20","btn21","btn22","btn23","btn24","btn25","btn26","btn27","btn28","btn29","btn30","btn31"];
+//var currentlyInBetween = [];
 
 const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -76,10 +78,6 @@ var currentMonth = 4; //starts with april (4-1)
 
 var focusDaysDate;
 var currentlyHoveredDate;
-
-function synchroniseVariables() {
-    document.getElementsByClassName("htmlCurrentMonth").id = currentMonth;
-}
 
 function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array bis zur Spalte X (x wird nicht addiert)
     var i = 0;
@@ -91,15 +89,69 @@ function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array
     return container;
 }
 
-function addDateTag() {
+function addDateTag() { //weist allen knöpfen ein Datum und eine Verfügbarkeit zu
     var i = 1;
     while (i <= monthsNmbrOfDays[currentMonth]) {
         document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
+        document.getElementById("btn" + i).available = true;
         console.log(document.getElementById("btn" + i).date)
         i += 1;
     }
 }
 
+function getElementByDate(searchedDate) {//findet den Knopf mit einem bestimmten Datum 
+    var i = 1;
+    var checkedElement;
+    while (i <= 31) {
+        checkedElement = document.getElementById("btn"+i);
+        if (checkedElement.date == searchedDate) {
+            //console.log("found" + checkedElement);
+            return checkedElement;
+        }
+        i += 1;
+    }
+}
+
+function resetAllButtons() {//setzt die Farbe aller nicht ausgebuchten Tage zurück mit ausnahme des ausgewählten und des überhoverten Tages
+    var i = 1
+    while (i <= 31) {
+        var btnName = "btn" + i;
+        var btn = document.getElementById(btnName);
+        if (btn.available && btnName != focusDay && btnName != currentlyHovered) {
+            btn.style.backgroundColor = "#e1e1e1";
+            btn.style.borderColor = "#777";
+        }
+        i += 1;
+    }
+    currentlyInBetween.length = 0;
+}
+
+function coloriseDaysBetween() { //färbt alle Tage zwischen dem ausgewählten und dem überhoverten Tag
+    var startPoint = document.getElementById(focusDay);
+    var endPoint = document.getElementById(currentlyHovered);
+    console.log("startpoint:"+startPoint.date+"  endpoint:"+endPoint.date);
+    resetAllButtons();
+    if (startPoint.date < endPoint.date) {
+        var i = 1;
+        while (i < endPoint.date - startPoint.date) {
+            var btnDate = startPoint.date + i;
+            getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
+            currentlyInBetween.push(getElementByDate(btnDate));
+            i += 1;
+        }
+        console.log(currentlyInBetween);
+    }
+    else if (startPoint.date > endPoint.date) {
+        var ii = 1;
+        while (ii < startPoint.date - endPoint.date) {
+            var btnDate = endPoint.date + ii;
+            getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
+            currentlyInBetween.push(getElementByDate(btnDate));
+            ii += 1;
+        }
+        currentlyInBetween.push(getElementByDate(btnDate));
+    }
+}
 
 function changeRoomValue(value) {//saves the kind of room you wanted to book
     room = value;
@@ -111,14 +163,15 @@ function changeFocusDay(btnNmbr) {//saves the currently focused day
         document.getElementById(focusDay).style.borderColor = "#777";
     }
     focusDay = "btn" + btnNmbr;
+    focusDaysDate = document.getElementById(focusDay).date;
 }
 function setHoveredElement(btnNmbr){ //saves the currently hovered day, if you stop hovering it without hovering a new one it still considers it hovered
     currentlyHovered = "btn" + btnNmbr;
 
     if (focusDay != undefined && currentlyHovered != focusDay) { //changes the hovered days color if you've already focused a day
+        coloriseDaysBetween();
         document.getElementById(currentlyHovered).style.backgroundColor = "#1abc9c";
         document.getElementById(currentlyHovered).style.borderColor = "#005a5c";
-
     }
 }
 
@@ -130,7 +183,7 @@ function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hover
     }
 }
 
-function changeColor(btnNmbr, color) {//chages color of a given day 
+function changeColor(btnNmbr, color) {//changes color of a given day 
     var btn = document.getElementById('btn' + btnNmbr.toString());
     console.log(btn);
     btn.style.backgroundColor = color;
