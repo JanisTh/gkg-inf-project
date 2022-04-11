@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+<style> /*CSS für den Kalender*/
 * {box-sizing: border-box;}
 ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
@@ -22,7 +22,7 @@ body {font-family: Verdana, sans-serif;}
   color: white;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  /*letter-spacing: 3px;*/
 }
 
 .month .prev {
@@ -49,9 +49,9 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .days {
-  padding:  0;
+  padding:  0%;
   background: #eee;
-  margin: 0;
+  margin: 0%;
 }
 
 .days li {
@@ -59,30 +59,12 @@ body {font-family: Verdana, sans-serif;}
   display: inline-block;
   width: 13.6%;
   text-align: center;
-  margin-bottom: 0px;
+  margin: 0%;
+  padding: 0%;
   font-size:12px;
   color: #777;
 }
 
-.days li .active {
-  padding: 0px;
-  background: #005a5c;
-  color: white !important
-}
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
-}
-
-@media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 2px;}
-}
-
-@media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
-}
 #monthHeader{
   margin: 0%;
   padding: 0%;
@@ -91,12 +73,12 @@ body {font-family: Verdana, sans-serif;}
 </head>
 <body>
 
-<h1>CSS Calendar</h1>
+<h1>Buchungsdaten eingeben</h1>
 
 <div class="month">      
   <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
+    <li class="prev" onclick="test();">&#10094;</li>
+    <li class="next" onclick="test();">&#10095;</li>
     <li>
       <div>April</div>
       <br><span style="font-size:18px">2021</span></br>
@@ -114,10 +96,14 @@ body {font-family: Verdana, sans-serif;}
   <li>So</li>
 </ul>
 
-<style>
+<style> /*CSS für die Knopfzustände der Tage*/
   .days button{
     background-color: #e1e1e1;
     border-color: #777;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
   }
   .days button:hover{
     background-color: #acacac;
@@ -161,6 +147,6 @@ body {font-family: Verdana, sans-serif;}
   <li><button id="btn30" onclick="changeFocusDay(30);" onmouseover="setHoveredElement(30);" onmouseleave="makeElementUnhoveredAgain(30);">30</button></li>
   <li><button id="btn31" onclick="changeFocusDay(31);" onmouseover="setHoveredElement(31);" onmouseleave="makeElementUnhoveredAgain(31);">31</button></li>
 </ul>
-<button onclick="addDateTag();"></button>
+<button onclick="test();"></button>
 </body>
 </html>

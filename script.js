@@ -38,6 +38,7 @@ function includeHTML() {
         if (file) {
             // Make an HTTP request using the attribute value as the file name
             xhttp = new XMLHttpRequest();
+            xhttp.addEventListener("loadend", displayBookingDates(file)) //ruft die Funktion auf, sobald eine Seite geladen wird
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     if (this.status == 200) { elmnt.innerHTML = this.responseText; }
@@ -67,15 +68,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
 ///////////////////
 
 var room;
-var focusDay; //speichert die ID des ausgewählten Tags als String
-var currentlyHovered; //speichert die ID des überhoverten Tags als String
+var focusDay; //speichert die ID des ausgewählten days als String
+var currentlyHovered; //speichert die ID des überhoverten days als String
 
 const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var currentMonth = 4; //starts with april (4-1)
+var currentMonth = 3; //speichert den Monat als Array Behälter, beginnt mit April (4-1)
 
 var focusDaysDate;
 var currentlyHoveredDate;
+
+
+function convertDateToRealDate(date) { //konvertiert den Tag im Jahr zu einem Datums-Array aus [tag, monat]
+    var day = date;
+    var month = 0;
+    while (day > 0) {
+        day -= monthsNmbrOfDays[month];
+        month += 1;
+    }
+    day += monthsNmbrOfDays[month - 1];
+    const realDate = [day, month];
+    return realDate;
+}
+var pageIsDanke = false; //wird von displayBookingDates() benötigt
+function displayBookingDates(file) {//wird 3 mal aufgerufen: für menu, page & footer
+    if (file == pagesDirectory + "danke.html") {//ändert pageIsDanke falls beim 2. Aufruf danke.html aufgerufen wird
+        pageIsDanke = true;
+        console.log("");
+    }
+    else if (pageIsDanke){//zeigt die Buchungsdaten falls beim 3. Aufruf pageIsDanke schon geändert wurde (erst beim 3. Aufruf, weil page erst NACH dem 2. Aufrurf fertig geladen wurde)
+        console.log(document.getElementById("dankePageDates"));
+        var date1 = sessionStorage.getItem('startDate');
+        var date2 = sessionStorage.getItem('endDate');
+        var realDate1 = convertDateToRealDate(date1);
+        var realDate2 = convertDateToRealDate(date2);
+        console.log(date1 + " = " + realDate1);
+        console.log(date2 + " = " + realDate2);
+        document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
+    }
+}
 
 function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array bis zur Spalte X (x wird nicht addiert)
     var i = 0;
@@ -91,7 +122,7 @@ function addDateTag() { //weist allen knöpfen ein Datum und eine Verfügbarkeit
     var i = 1;
     while (i <= monthsNmbrOfDays[currentMonth]) {
         document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
-        document.getElementById("btn" + i).available = true;
+        document.getElementById("btn" + i).available = true; //würde vielleicht eines Tages durch serverside & DB geändert werden
         console.log(document.getElementById("btn" + i).date)
         i += 1;
     }
@@ -103,7 +134,6 @@ function getElementByDate(searchedDate) {//findet den Knopf mit einem bestimmten
     while (i <= 31) {
         checkedElement = document.getElementById("btn"+i);
         if (checkedElement.date == searchedDate) {
-            //console.log("found" + checkedElement);
             return checkedElement;
         }
         i += 1;
@@ -146,29 +176,33 @@ function coloriseDaysBetween() { //färbt alle Tage zwischen dem ausgewählten u
     }
 }
 
-function changeRoomValue(value) {//saves the kind of room you wanted to book
+function changeRoomValue(value) {//speichert die Raum-Art die gebucht werden soll
     room = value;
     console.log("room changed to " + value);
 }
-function changeFocusDay(btnNmbr) {//saves the currently focused day 
-    if (focusDay != undefined) {//checks if theres already a focused day and resets the old one if thats the case
-        document.getElementById(focusDay).style.backgroundColor = "#e1e1e1";
-        document.getElementById(focusDay).style.borderColor = "#777";
+function changeFocusDay(btnNmbr) {//speichert den gerade Fokusierten Tag
+    if (focusDay != undefined) {//beendet den Buchungsprozess falls schon zum zweiten Mal ein Tag angeklickt wird
+        var date1 = document.getElementById(focusDay).date;
+        var date2 = document.getElementById("btn" + btnNmbr).date;
+        sessionStorage.setItem('startDate', date1);
+        sessionStorage.setItem('endDate', date2);
+        window.location.href = '?page=danke';
     }
     focusDay = "btn" + btnNmbr;
+    addDateTag();//fügt beim ersten Klick dateTags hinzu
     focusDaysDate = document.getElementById(focusDay).date;
 }
-function setHoveredElement(btnNmbr){ //saves the currently hovered day, if you stop hovering it without hovering a new one it still considers it hovered
+function setHoveredElement(btnNmbr){//speichert den gerade überhoverten Tag, zählt ihn immer noch als gehovert falls man ihn verlässt ohne einen neuen zu hovern
     currentlyHovered = "btn" + btnNmbr;
 
-    if (focusDay != undefined && currentlyHovered != focusDay) { //changes the hovered days color if you've already focused a day
+    if (focusDay != undefined && currentlyHovered != focusDay) {//färbt den gehoverten Tag, falls man schon ein Startsatum ausgewählt hat
         coloriseDaysBetween();
         document.getElementById(currentlyHovered).style.backgroundColor = "#1abc9c";
         document.getElementById(currentlyHovered).style.borderColor = "#005a5c";
     }
 }
 
-function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hovering it
+function makeElementUnhoveredAgain(btnNmbr) { //setzt den Tag zurück falls man ihn nicht mehr überhovered
     const btn = "btn" + btnNmbr;
     if (btn != focusDay) {
         document.getElementById(btn).style.backgroundColor = "#e1e1e1";
@@ -176,12 +210,11 @@ function makeElementUnhoveredAgain(btnNmbr) { //resets the day if you stop hover
     }
 }
 
-function changeColor(btnNmbr, color) {//changes color of a given day 
+function changeColor(btnNmbr, color) {//ändert die Farbe des ausgewählten Tags 
     var btn = document.getElementById('btn' + btnNmbr.toString());
     console.log(btn);
     btn.style.backgroundColor = color;
 }
-
 
 //Keller und erster Stock
 var nmbrOfGruppenzimmer = 4;
