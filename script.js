@@ -75,9 +75,24 @@ const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "A
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var currentMonth = 3; //speichert den Monat als Array Behälter, beginnt mit April (4-1)
 
-var focusDaysDate;
+var focusDaysDate; //bleibt gleich, auch wenn der Monat geändert wurde
 var currentlyHoveredDate;
 
+function changeMonth(delta) {
+    currentMonth += delta; 
+    if (currentMonth == 12) {
+        currentMonth = 0;
+    }
+    else if (currentMonth == -1) {
+        currentMonth = 11;
+    }
+    console.log(currentMonth);
+    document.getElementById("monthsName").innerHTML = months[currentMonth];
+    resetAllButtons();
+    console.log(focusDaysDate);
+    addDateTag();
+    console.log(focusDaysDate);
+}
 
 function convertDateToRealDate(date) { //konvertiert den Tag im Jahr zu einem Datums-Array aus [tag, monat]
     var day = date;
@@ -104,7 +119,22 @@ function displayBookingDates(file) {//wird 3 mal aufgerufen: für menu, page & f
         var realDate2 = convertDateToRealDate(date2);
         console.log(date1 + " = " + realDate1);
         console.log(date2 + " = " + realDate2);
-        document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
+        if (realDate1[1] < realDate2[1]) { //month1 < month2
+            document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
+        }
+        else if (realDate1[1] > realDate2[1]) { // month1 > month2
+            document.getElementById("dankePageDates").innerHTML = realDate2[0] + "." + realDate2[1] + " - " + realDate1[0] + "." + realDate1[1];
+        }
+        else if (realDate1[0] < realDate2[0]) { // month1 == month2, day1 < day2
+            document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
+        }
+        else if (realDate1[0] > realDate2[0]) { // month1 == month2, day1 > day2
+            document.getElementById("dankePageDates").innerHTML = realDate2[0] + "." + realDate2[1] + " - " + realDate1[0] + "." + realDate1[1];
+        }
+        else{ // month1 == month2, day1 == day2
+            document.getElementById("dankeSentence").innerHTML = "Vielen Dank, dass Sie sich für eine Übernachtung am";
+            document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1];
+        }
     }
 }
 
@@ -123,7 +153,7 @@ function addDateTag() { //weist allen knöpfen ein Datum und eine Verfügbarkeit
     while (i <= monthsNmbrOfDays[currentMonth]) {
         document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
         document.getElementById("btn" + i).available = true; //würde vielleicht eines Tages durch serverside & DB geändert werden
-        console.log(document.getElementById("btn" + i).date)
+        //console.log(document.getElementById("btn" + i).date)
         i += 1;
     }
 }
@@ -158,20 +188,43 @@ function coloriseDaysBetween() { //färbt alle Tage zwischen dem ausgewählten u
     var endPoint = document.getElementById(currentlyHovered);
     console.log("startpoint:"+startPoint.date+"  endpoint:"+endPoint.date);
     resetAllButtons();
-    if (startPoint.date < endPoint.date) {
-        var i = 1;
-        while (i < endPoint.date - startPoint.date) {
-            var btnDate = startPoint.date + i;
-            getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
-            i += 1;
+    if (focusDaysDate < endPoint.date) {
+        if (convertDateToRealDate(focusDaysDate)[1] == convertDateToRealDate(endPoint.date)[1]) {    
+            var i = 1;
+            while (i < endPoint.date - startPoint.date) {
+                var btnDate = startPoint.date + i;
+                getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
+                i += 1;
+            }
+        }
+        else{//endpoints month > startpoints month
+            document.getElementById(focusDay).style.backgroundColor = "#e1e1e1";
+            document.getElementById(focusDay).style.borderColor = "#777";
+            var i = 1;
+            while (i < convertDateToRealDate(endPoint.date)[0]) {
+                document.getElementById("btn" + i).style.backgroundColor = "#B3E6B5";
+                i += 1;
+            }
         }
     }
-    else if (startPoint.date > endPoint.date) {
-        var ii = 1;
-        while (ii < startPoint.date - endPoint.date) {
-            var btnDate = endPoint.date + ii;
-            getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
-            ii += 1;
+    else if (focusDaysDate > endPoint.date) {
+        if (convertDateToRealDate(focusDaysDate)[1] == convertDateToRealDate(endPoint.date)[1]) {
+            var i = 1;
+            while (i < startPoint.date - endPoint.date) {
+                var btnDate = endPoint.date + i;
+                getElementByDate(btnDate).style.backgroundColor = "#B3E6B5";
+                i += 1;
+            }
+        }
+        else {//endpoints month < startpoints month
+            console.log("endPoints month < startpoints month");
+            document.getElementById(focusDay).style.backgroundColor = "#e1e1e1";
+            document.getElementById(focusDay).style.borderColor = "#777";
+            var i = 31;
+            while (i > convertDateToRealDate(endPoint.date)[0]) {
+                document.getElementById("btn"+i).style.backgroundColor = "#B3E6B5";
+                i -= 1;
+            }
         }
     }
 }
@@ -182,7 +235,7 @@ function changeRoomValue(value) {//speichert die Raum-Art die gebucht werden sol
 }
 function changeFocusDay(btnNmbr) {//speichert den gerade Fokusierten Tag
     if (focusDay != undefined) {//beendet den Buchungsprozess falls schon zum zweiten Mal ein Tag angeklickt wird
-        var date1 = document.getElementById(focusDay).date;
+        var date1 = focusDaysDate;
         var date2 = document.getElementById("btn" + btnNmbr).date;
         sessionStorage.setItem('startDate', date1);
         sessionStorage.setItem('endDate', date2);
