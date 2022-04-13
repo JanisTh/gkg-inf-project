@@ -26,7 +26,7 @@
 * 10.01.22: Textbeschreibung der Zimmer, sowie Vervollständigung des Kontaktformulars
 * 07.02.22: Grundfunktion fertiggestellt und README nachgetragen
 * 21.03.22: Einfache Version möglichst Fehlerfrei fertiggestellt
-* 10.04.22: Erweiterte Version fertiggestellt und Abgabe 
+* 17.04.22: Erweiterte Version fertiggestellt und Abgabe 
 
 <br></br>
 
