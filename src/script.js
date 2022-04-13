@@ -3,10 +3,10 @@
 ///////////////////
 
 
-// Path of the page directory
+//Path of the page directory
 const pagesDirectory = "page/";
 
-// Default html page (home page)
+//Default html page (home page)
 const defaultPage = "home";
 
 
@@ -16,16 +16,16 @@ const defaultPage = "home";
 
 
 /**
- * Function that injects a html file into a tag having the property include-html="path.html".
- * Source: https://www.w3schools.com/howto/howto_html_include.asp
+ *Function that injects a HTML file into a tag having the property include-html="path.html".
+ *Source: https://www.w3schools.com/howto/howto_html_include.asp
  */
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
-    // Loop through a collection of all HTML elements:
+    //Loop through a collection of all HTML elements:
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
         elmnt = z[i];
-        // Search for elements with a certain atrribute:
+        //Search for elements with a certain atrribute:
         file = elmnt.getAttribute("include-html");
         if (file === "$page") {
             const urlParams = new URLSearchParams(window.location.search);
@@ -36,14 +36,14 @@ function includeHTML() {
             file = pagesDirectory + page + ".html";
         }
         if (file) {
-            // Make an HTTP request using the attribute value as the file name
+            //Make an HTTP request using the attribute value as the file name
             xhttp = new XMLHttpRequest();
-            xhttp.addEventListener("loadend", displayBookingDates(file)) //ruft die Funktion auf, sobald eine Seite geladen wird
+            xhttp.addEventListener("loadend", displayBookingDates(file)) //Ruft die Funktion auf, sobald eine Seite geladen wird
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     if (this.status == 200) { elmnt.innerHTML = this.responseText; }
                     if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                    /* Remove the attribute, and call this function once more: */
+                    /*Removes the attribute and call this function once more: */
                     elmnt.removeAttribute("include-html");
                     includeHTML();
                 }
@@ -56,7 +56,7 @@ function includeHTML() {
 }
 
 /**
- * Function that is called when the page has finished loading.
+ *Function which is called when the page has finished loading.
  */
 document.addEventListener("DOMContentLoaded", function (event) {
     includeHTML();
@@ -68,24 +68,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
 ///////////////////
 
 var room;
-var focusDay; //speichert die ID des ausgewählten days als String
+var focusDay; //Speichert die ID des ausgewählten days als String
 var currentlyHovered; //speichert die ID des überhoverten days als String
 
 const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
 const monthsNmbrOfDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var currentMonth = 3; //speichert den Monat als Array Behälter, beginnt mit April (4-1)
+var currentMonth = 3; //Speichert den Monat als Array Behälter, beginnt mit April (4-1)
 
-var focusDaysDate; //bleibt gleich, auch wenn der Monat geändert wurde
+var focusDaysDate; //Bleibt gleich, auch wenn der Monat geändert wurde
 var currentlyHoveredDate;
 
-function changeRoomValue(value) {//speichert die Raum-Art die gebucht werden soll
+function changeRoomValue(value) {//Speichert die Raum-Art, die gebucht werden soll.
     room = value;
     console.log("room changed to " + value);
 }
 
 
 
-function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array bis zur Spalte X (x wird nicht addiert)
+function addUpNmbrOfDaysArray(x) {//Addiert alle Werte im "monthsNmbrOfDays" Array bis zur Spalte X(x wird nicht addiert)
     var i = 0;
     var container = 0;
     while (i < x) {
@@ -95,16 +95,16 @@ function addUpNmbrOfDaysArray(x) {//addiert alle Werte im monthsNmbrOfDays Array
     return container;
 }
 
-function addDateTag() { //weist allen knöpfen ein Datum und eine Verfügbarkeit zu
+function addDateTag() { //Weist allen Knöpfen ein Datum und eine Verfügbarkeit zu
     var i = 1;
     while (i <= monthsNmbrOfDays[currentMonth]) {
         document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
-        document.getElementById("btn" + i).available = true; //würde vielleicht eines Tages durch serverside & DB geändert werden
+        document.getElementById("btn" + i).available = true; //Würde vielleicht eines Tages durch serverside & DB geändert werden
         //console.log(document.getElementById("btn" + i).date)
         i += 1;
     }
 }
-function convertDateToRealDate(date) { //konvertiert den Tag im Jahr zu einem Datums-Array aus [tag, monat]
+function convertDateToRealDate(date) { //Konvertiert den Tag im Jahr zu einem Datums-Array aus [Tag, Monat]
     var day = date;
     var month = 0;
     while (day > 0) {
@@ -115,7 +115,7 @@ function convertDateToRealDate(date) { //konvertiert den Tag im Jahr zu einem Da
     const realDate = [day, month];
     return realDate;
 }
-function getElementByDate(searchedDate) {//findet den Knopf mit einem bestimmten Datum 
+function getElementByDate(searchedDate) {//Findet den Knopf mit einem bestimmten Datum 
     var i = 1;
     var checkedElement;
     while (i <= 31) {
@@ -126,7 +126,7 @@ function getElementByDate(searchedDate) {//findet den Knopf mit einem bestimmten
         i += 1;
     }
 }
-function resetAllButtons() {//setzt die Farbe aller nicht ausgebuchten Tage zurück mit ausnahme des ausgewählten und des überhoverten Tages
+function resetAllButtons() {//Setzt die Farbe aller nicht ausgebuchten Tage zurück mit Ausnahme des ausgewählten und des überhoverten Tages
     var i = 1
     while (i <= 31) {
         var btnName = "btn" + i;
@@ -158,8 +158,8 @@ function changeMonth(delta) {
     addDateTag();
     console.log(focusDaysDate);
 }
-function changeFocusDay(btnNmbr) {//speichert den gerade Fokusierten Tag
-    if (focusDay != undefined) {//beendet den Buchungsprozess falls schon zum zweiten Mal ein Tag angeklickt wird
+function changeFocusDay(btnNmbr) {//Speichert den gerade fokussierten Tag
+    if (focusDay != undefined) {//Beendet den Buchungsprozess, falls schon zum zweiten Mal ein Tag angeklickt wird.
         var date1 = focusDaysDate;
         var date2 = document.getElementById("btn" + btnNmbr).date;
         sessionStorage.setItem('startDate', date1);
@@ -167,26 +167,26 @@ function changeFocusDay(btnNmbr) {//speichert den gerade Fokusierten Tag
         window.location.href = '?page=danke';
     }
     focusDay = "btn" + btnNmbr;
-    addDateTag();//fügt beim ersten Klick dateTags hinzu
+    addDateTag();//Fügt beim ersten Klick "dateTags" hinzu
     focusDaysDate = document.getElementById(focusDay).date;
 }
-function setHoveredElement(btnNmbr){//speichert den gerade überhoverten Tag, zählt ihn immer noch als gehovert falls man ihn verlässt ohne einen neuen zu hovern
+function setHoveredElement(btnNmbr){//Speichert den gerade überhoverten Tag, zählt ihn immer noch als gehovert, falls man ihn verlässt, ohne einen neuen zu hovern
     currentlyHovered = "btn" + btnNmbr;
 
-    if (focusDay != undefined && currentlyHovered != focusDay) {//färbt den gehoverten Tag, falls man schon ein Startsatum ausgewählt hat
+    if (focusDay != undefined && currentlyHovered != focusDay) {//Färbt den gehoverten Tag, falls man schon ein Startdatum ausgewählt hat.
         coloriseDaysBetween();
         document.getElementById(currentlyHovered).style.backgroundColor = "#1abc9c";
         document.getElementById(currentlyHovered).style.borderColor = "#005a5c";
     }
 }
-function makeElementUnhoveredAgain(btnNmbr) { //setzt den Tag zurück falls man ihn nicht mehr überhovered
+function makeElementUnhoveredAgain(btnNmbr) { //Setzt den Tag zurück, falls man ihn nicht mehr überhoveret.
     const btn = "btn" + btnNmbr;
     if (btn != focusDay) {
         document.getElementById(btn).style.backgroundColor = "#e1e1e1";
         document.getElementById(btn).style.borderColor = "#777";
     }
 }
-function coloriseDaysBetween() { //färbt alle Tage zwischen dem ausgewählten und dem überhoverten Tag
+function coloriseDaysBetween() { //Färbt alle Tage zwischen dem ausgewählten und dem überhoverten Tag
     var startPoint = document.getElementById(focusDay);
     var endPoint = document.getElementById(currentlyHovered);
     console.log("startpoint:"+startPoint.date+"  endpoint:"+endPoint.date);
@@ -234,13 +234,13 @@ function coloriseDaysBetween() { //färbt alle Tage zwischen dem ausgewählten u
 
 
 
-var pageIsDanke = false; //wird von displayBookingDates() benötigt
-function displayBookingDates(file) {//wird 3 mal aufgerufen: für menu, page & footer
-    if (file == pagesDirectory + "danke.html") {//ändert pageIsDanke falls beim 2. Aufruf danke.html aufgerufen wird
+var pageIsDanke = false; //Wird von "displayBookingDates()" benötigt
+function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "page" & "footer"
+    if (file == pagesDirectory + "danke.html") {//Ändert "pageIsDanke", falls beim zweiten Aufruf "danke.html" aufgerufen wird.
         pageIsDanke = true;
         console.log("");
     }
-    else if (pageIsDanke){//zeigt die Buchungsdaten falls beim 3. Aufruf pageIsDanke schon geändert wurde (erst beim 3. Aufruf, weil page erst NACH dem 2. Aufrurf fertig geladen wurde)
+    else if (pageIsDanke){//Zeigt die Buchungsdaten, falls beim dritten Aufruf "pageIsDanke" schon geändert wurde (erst beim dritten Aufruf, weil "page" erst NACH dem zweiten Aufrurf fertig geladen wurde)
         console.log(document.getElementById("dankePageDates"));
         var date1 = sessionStorage.getItem('startDate');
         var date2 = sessionStorage.getItem('endDate');
