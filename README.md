@@ -17,18 +17,16 @@
 
 
 
-
-
 <br></br>
 
 ### **Arbeitsplan:**
 
-* 29.11.21 : Beginn des Projektes
-* 13.12.21 : Anfang Aufbau des Grundgerüsts
-* 10.01.22 : Textbeschreibung der Zimmer, sowie Vervollständigung des Kontaktformulars
-* 07.02.22 : Grundfunktion fertiggestellt und README nachgetragen
-* 21.03.22 : Einfache Version möglichst Fehlerfrei fertiggestellt
-* 10.04.22 : Erweiterte Version fertiggestellt und Abgabe 
+* 29.11.21: Beginn des Projektes
+* 13.12.21: Anfang Aufbau des Grundgerüsts
+* 10.01.22: Textbeschreibung der Zimmer, sowie Vervollständigung des Kontaktformulars
+* 07.02.22: Grundfunktion fertiggestellt und README nachgetragen
+* 21.03.22: Einfache Version möglichst Fehlerfrei fertiggestellt
+* 10.04.22: Erweiterte Version fertiggestellt und Abgabe 
 
 <br></br>
 
