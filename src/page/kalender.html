@@ -4,7 +4,12 @@
 <style> /*CSS für den Kalender*/
 * {box-sizing: border-box;}
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
+body {
+  font-family: Verdana, sans-serif;
+}
+#kalenderContainer{
+  height: 30vh;
+}
 
 .month {
   padding: 70px 25px;
@@ -12,24 +17,24 @@ body {font-family: Verdana, sans-serif;}
   background: #005a5c;
   text-align: center;
 }
-
 .month ul {
   margin: 0;
   padding: 0;
 }
-
 .month ul li {
   color: white;
   font-size: 20px;
   text-transform: uppercase;
   /*letter-spacing: 3px;*/
 }
-
+#monthHeader{
+  margin: 0%;
+  padding: 0%;
+}
 .month .prev {
   float: left;
   padding-top: 10px;
 }
-
 .month .next {
   float: right;
   padding-top: 10px;
@@ -40,7 +45,6 @@ body {font-family: Verdana, sans-serif;}
   padding: 10px 0;
   background-color: #ddd;
 }
-
 .weekdays li {
   display: inline-block;
   width: 13.6%;
@@ -53,7 +57,6 @@ body {font-family: Verdana, sans-serif;}
   background: #eee;
   margin: 0%;
 }
-
 .days li {
   list-style-type: none;
   display: inline-block;
@@ -63,11 +66,6 @@ body {font-family: Verdana, sans-serif;}
   padding: 0%;
   font-size:12px;
   color: #777;
-}
-
-#monthHeader{
-  margin: 0%;
-  padding: 0%;
 }
 </style>
 </head>
@@ -114,6 +112,7 @@ body {font-family: Verdana, sans-serif;}
     border-color: #005a5c;
   }
 </style>
+<div id="kalenderContainer">
 <ul class="days">
   <li><button id="btn1" onclick="changeFocusDay(1);" onmouseover="setHoveredElement(1);" onmouseleave="makeElementUnhoveredAgain(1);">1</button></li>
   <li><button id="btn2" onclick="changeFocusDay(2);" onmouseover="setHoveredElement(2);" onmouseleave="makeElementUnhoveredAgain(2);">2</button></li>
@@ -147,6 +146,6 @@ body {font-family: Verdana, sans-serif;}
   <li><button id="btn30" onclick="changeFocusDay(30);" onmouseover="setHoveredElement(30);" onmouseleave="makeElementUnhoveredAgain(30);">30</button></li>
   <li><button id="btn31" onclick="changeFocusDay(31);" onmouseover="setHoveredElement(31);" onmouseleave="makeElementUnhoveredAgain(31);">31</button></li>
 </ul>
-<button onclick="test();"></button>
+</div>
 </body>
 </html>
