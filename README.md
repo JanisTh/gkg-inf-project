@@ -1,17 +1,21 @@
-# Dokumentation Informatik Projekt 2
+# Dokumentation Informatik Projekt 3
 
 *By Janis, Lenny, Julian*
 ## **Hotelbuchungsystem**
 ### **Table of Contents:**
 <br></br>
+
 1. [Generelle Infos/Arbeitsplan](###Arbeitsplan:)
 2. [Beschreibung](###BeschreibungdesProjektes:)
 3. [Umsetzung/Arbeitsteilung](###Umsetzung/Arbeitsteilung:)
 4. [Idee](###Idee:)
 5. [Benutzung](###BenutzungderWebseite:)
-6. [Screenshots](###Screenshots:)
-7. [Fazit](###Fazit:)
-8. [Quellen](###quellen:)
+6. [Fehlerquellen](###Fehlerquellen:)
+7. [Screenshots](###Screenshots:)
+8. [Fazit](###Fazit:)
+9. [Quellen](###quellen:)
+
+
 
 
 
@@ -58,10 +62,16 @@ Das Projekt kann auch auf Github.com über die Vorschau angeschaut werden.
 
 Wenn sie die Webseite zum ersten Mal besuchen, landen sie zuerst auf der schönen "Homepage", wo sie bereits einige Informationen zum Hotel erwarten. Von hier aus können sie sich Allgemeines über das Hotel anschauen und einige Angaben zu Zimmern und Mitarbeitern bekommen.
 Unter dem Reiter "Zimmer" können sie sich die jeweiligen Eigenschaften unserer wunderbaren Zimmer anschauen und sie untereinander vergleichen.
-Sollten sie sich entscheiden bei uns logieren zu wollen, kommen sie unter dem Reiter "Buchen" direkt zur Zimmerauswahl, wo sie das bereits ausgewählte Zimmer mit nur einem Klick auswählen können. Daraufhin werden sie dann sofort zur Datenauswahl weitergeleitet. Bei der Auswahl wird ihnen auch gleich mitgeteilt, inwiefern 
-ihr Zimmer an den gewünschten Daten verfügbar ist. Sollte Alles nach ihrer Zufriedenheit funktionieren, können sie sich die finale Bestellübersicht anzeigen lassen und die Buchung abschicken, indem sie den "Abschicken" Button drücken.
+Sollten sie sich entscheiden bei uns logieren zu wollen, kommen sie unter dem Reiter "Buchen" direkt zur Zimmerauswahl, wo sie das bereits ausgesuchte Zimmer mit nur einem "Click" auswählen können. Daraufhin werden sie dann sofort zur Datenauswahl weitergeleitet. Bei der Auswahl der Daten können sie durch zwei "Clicks" ihre Aufenthaltszeit auswählen. Sollte Alles nach ihrer Zufriedenheit funktionieren, können sie sich die finale Bestellübersicht anzeigen lassen und die Buchung abschicken.
 Wenn dieser Vorgang nun verarbeitet wurde, erhalten sie die Bestellbestätigungsübersicht.
+Nun können sie über den Button "Zurück zu Home" wieder aus der Bestellübersicht zur "Homeseite" zurückkehren.
 Ihr Buchung ist nun bestätigt. **Wir wünschen einen schönen Aufenthalt!**
+
+<br></br>
+
+### **Fehlerquellen:**
+
+Aufgrund eines «Browserbugs» kann es passieren, dass beim ersten besuchen der Webseite der erste «Click» nicht direkt angenommen wird und es darum zu einer Annahmen eines falschen Datums kommen kann. In diesem Fall sollte der Prozess der Buchung noch einmal wiederholt werdem. Wir haben die Fehler vor allem im Browser «Microsoft Edge» festgestellt. Da uns nach langem Nachforschen noch immer nicht klar ist, an was es liegen könnte, weisen wir in diesem Kommentar darauf hin.
 
 <br></br>
 
