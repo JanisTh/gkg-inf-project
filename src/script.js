@@ -100,8 +100,13 @@ function addDateTag() { //Weist allen Knöpfen ein Datum und eine Verfügbarkeit
     while (i <= monthsNmbrOfDays[currentMonth]) {
         document.getElementById("btn" + i).date = i + addUpNmbrOfDaysArray(currentMonth);
         document.getElementById("btn" + i).available = true; //Würde vielleicht eines Tages durch serverside & DB geändert werden
-        //console.log(document.getElementById("btn" + i).date)
+        document.getElementById("btn" + i).style.visibility = "visible";
         i += 1;
+    }
+    i = 31;
+    while (i > monthsNmbrOfDays[currentMonth]) { //versteckt die Knöpfe der Tage, die es im Monat nicht gibt
+        document.getElementById("btn" + i).style.visibility = "hidden";
+        i -= 1;
     }
 }
 function convertDateToRealDate(date) { //Konvertiert den Tag im Jahr zu einem Datums-Array aus [Tag, Monat]
@@ -154,9 +159,7 @@ function changeMonth(delta) {
     console.log(currentMonth);
     document.getElementById("monthsName").innerHTML = months[currentMonth];
     resetAllButtons();
-    console.log(focusDaysDate);
     addDateTag();
-    console.log(focusDaysDate);
 }
 function changeFocusDay(btnNmbr) {//Speichert den gerade fokussierten Tag
     if (focusDay != undefined) {//Beendet den Buchungsprozess, falls schon zum zweiten Mal ein Tag angeklickt wird.
@@ -246,8 +249,6 @@ function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "pag
         var date2 = sessionStorage.getItem('endDate');
         var realDate1 = convertDateToRealDate(date1);
         var realDate2 = convertDateToRealDate(date2);
-        console.log(date1 + " = " + realDate1);
-        console.log(date2 + " = " + realDate2);
         if (realDate1[1] < realDate2[1]) { //month1 < month2
             document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
         }
@@ -267,9 +268,9 @@ function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "pag
     }
 }
 
-//Eventuell notwendig für zukünftige Erweiterungen
-var nmbrOfGruppenzimmer = 4;
-var nmbrOfLuxuxSuites = 2;
-var nmbrOfFamilienzimmer = 25;
-var nmbrOfDoppelzimmer = 15;
+//Eventuell notwendig für zukünftige Erweiterungen//
 
+//var nmbrOfGruppenzimmer = 4;
+//var nmbrOfLuxuxSuites = 2;
+//var nmbrOfFamilienzimmer = 25;
+//var nmbrOfDoppelzimmer = 15;
