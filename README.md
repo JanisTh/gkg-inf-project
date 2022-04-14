@@ -6,10 +6,10 @@
 <br></br>
 
 1. [Generelle Infos/Arbeitsplan](###Arbeitsplan:)
-2. [Beschreibung](###BeschreibungdesProjektes:)
+2. [Beschreibung](###Projektbeschreibung:)
 3. [Umsetzung/Arbeitsteilung](###Umsetzung/Arbeitsteilung:)
 4. [Idee](###Idee:)
-5. [Benutzung](###BenutzungderWebseite:)
+5. [Benutzung](###Webseitenbenutzung:)
 6. [Fehlerquellen](###Fehlerquellen:)
 7. [Screenshots](###Screenshots:)
 8. [Fazit](###Fazit:)
@@ -30,7 +30,7 @@
 
 <br></br>
 
-### **Beschreibung des Projektes:**
+### **Projektbeschreibung:**
 
 In diesem Projekt sollte durch gemeinsame Arbeit, als Produkt, eine Hotelwebseite entstehen, die man grundsätzlich kaum von einer professionellen unterscheiden können sollte.
 Es werden die einzelnen Zimmer beschrieben und mit Bildern dem Benutzer einfach und angenehm erklärt, wie der Buchungsprozess verläuft.
@@ -52,7 +52,7 @@ Durch die Erfindung eines imaginären Gasthauses und der Erstellung dessen Webse
 
 <br></br>
 
-### **Benutzung der Webseite:**
+### **Webseitenbenutzung:**
 
 Öffnen: Um die Webseite zu öffnen, müssen sie mit Rechtsklick über "index.html" zu "Live-server" navigieren und ihn in ihrem Browser (bevorzugt Chromium basierte Browser) öffnen.
 Für den ganzen Prozess wird vorerst das Programm Visual Studio Code, mit dem das Projekt erstellt wurde, bzw. Github.com, über was das Projekt angeschaut oder heruntergeladen werden kann, benötigt. 
