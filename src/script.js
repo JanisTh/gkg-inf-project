@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // OTHER SCRIPTS //
 ///////////////////
 
-var room;
 var focusDay; //Speichert die ID des ausgewählten days als String
 var currentlyHovered; //speichert die ID des überhoverten days als String
 
@@ -79,8 +78,7 @@ var focusDaysDate; //Bleibt gleich, auch wenn der Monat geändert wurde
 var currentlyHoveredDate;
 
 function changeRoomValue(value) {//Speichert die Raum-Art, die gebucht werden soll.
-    room = value;
-    console.log("room changed to " + value);
+    sessionStorage.setItem('room', value);
 }
 
 
@@ -249,6 +247,7 @@ function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "pag
         var date2 = sessionStorage.getItem('endDate');
         var realDate1 = convertDateToRealDate(date1);
         var realDate2 = convertDateToRealDate(date2);
+        document.getElementById("dankeSentence").innerHTML = "Vielen Dank, dass Sie sich für " + sessionStorage.getItem('room') + " vom";
         if (realDate1[1] < realDate2[1]) { //month1 < month2
             document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1] + " - " + realDate2[0] + "." + realDate2[1];
         }
