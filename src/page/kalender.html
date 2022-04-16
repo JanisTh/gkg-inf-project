@@ -4,6 +4,9 @@
 <style> /*CSS für den Kalender*/
 * {box-sizing: border-box;}
 ul {list-style-type: none;}
+.footer{ /*sorgt dafür, dass der footer nicht von *{box-sizing: border-box;} betroffen ist */
+  box-sizing: content-box;
+}
 body {
   font-family: Verdana, sans-serif;
 }
