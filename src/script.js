@@ -134,7 +134,7 @@ function calculatePrice() {
     var price;
     console.log(realDate1);
     if (realDate1[1] == realDate2[1]) { //month1 == month2
-        aufenthaltsdauer = Math.abs(realDate1[0] - realDate2[0]);
+        aufenthaltsdauer = Math.abs(realDate1[0] - realDate2[0] + 1);
         console.log(aufenthaltsdauer);
     }
     else{
