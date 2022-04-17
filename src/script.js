@@ -139,11 +139,11 @@ function calculatePrice() {
     }
     else{
         if (realDate1[1] < realDate2[1]) {
-            aufenthaltsdauer = monthsNmbrOfDays[realDate1[1] - 1] - realDate1[0] + realDate2[0];
+            aufenthaltsdauer = monthsNmbrOfDays[realDate1[1] - 1] - realDate1[0] + realDate2[0] + 1;
             console.log(aufenthaltsdauer);
         }
         else{ //month1 > month2
-            aufenthaltsdauer = monthsNmbrOfDays[realDate2[1] - 1] - realDate2[0] + realDate1[0];
+            aufenthaltsdauer = monthsNmbrOfDays[realDate2[1] - 1] - realDate2[0] + realDate1[0] + 1;
             console.log(aufenthaltsdauer);
         }
     }
@@ -301,7 +301,7 @@ function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "pag
             document.getElementById("dankePageDates").innerHTML = realDate2[0] + "." + realDate2[1] + " - " + realDate1[0] + "." + realDate1[1];
         }
         else{ // month1 == month2, day1 == day2
-            document.getElementById("dankeSentence").innerHTML = "Vielen Dank, dass Sie sich für eine Übernachtung am";
+            document.getElementById("dankeSentence").innerHTML = "Vielen Dank, dass Sie sich für einen Aufenthalt am";
             document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1];
         }
         calculatePrice();
