@@ -78,10 +78,10 @@ var focusDaysDate; //Bleibt gleich, auch wenn der Monat geändert wurde
 var currentlyHoveredDate;
 
 //Preise in CHF pro Nacht
-const doppelzimmerPreis = 100;
-const gruppenzimmerPreis = 83;
-const familienzimmerPreis = 92;
-const luxussuitePreis = 345;
+const doppelzimmerPreis = 187;
+const gruppenzimmerPreis = 69;
+const familienzimmerPreis = 207;
+const luxussuitePreis = 420;
 
 
 function changeRoomValue(value) {//Speichert die Raum-Art, die gebucht werden soll.
