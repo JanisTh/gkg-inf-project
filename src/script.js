@@ -77,6 +77,13 @@ var currentMonth = 3; //Speichert den Monat als Array Behälter, beginnt mit Apr
 var focusDaysDate; //Bleibt gleich, auch wenn der Monat geändert wurde
 var currentlyHoveredDate;
 
+//Preise in CHF pro Nacht
+const doppelzimmerPreis = 100;
+const gruppenzimmerPreis = 83;
+const familienzimmerPreis = 92;
+const luxussuitePreis = 345;
+
+
 function changeRoomValue(value) {//Speichert die Raum-Art, die gebucht werden soll.
     sessionStorage.setItem('room', value);
 }
@@ -118,6 +125,43 @@ function convertDateToRealDate(date) { //Konvertiert den Tag im Jahr zu einem Da
     const realDate = [day, month];
     return realDate;
 }
+function calculatePrice() {
+    var date1 = sessionStorage.getItem('startDate');
+    var date2 = sessionStorage.getItem('endDate');
+    var realDate1 = convertDateToRealDate(date1);
+    var realDate2 = convertDateToRealDate(date2);
+    var aufenthaltsdauer;
+    var price;
+    console.log(realDate1);
+    if (realDate1[1] == realDate2[1]) { //month1 == month2
+        aufenthaltsdauer = Math.abs(realDate1[0] - realDate2[0]);
+        console.log(aufenthaltsdauer);
+    }
+    else{
+        if (realDate1[1] < realDate2[1]) {
+            aufenthaltsdauer = monthsNmbrOfDays[realDate1[1] - 1] - realDate1[0] + realDate2[0];
+            console.log(aufenthaltsdauer);
+        }
+        else{ //month1 > month2
+            aufenthaltsdauer = monthsNmbrOfDays[realDate2[1] - 1] - realDate2[0] + realDate1[0];
+            console.log(aufenthaltsdauer);
+        }
+    }
+    switch (sessionStorage.getItem('room')) {
+        case "ein Doppelzimmer":
+            document.getElementById("dankePreis").innerHTML = "Der Preis beträgt " + aufenthaltsdauer * doppelzimmerPreis + ".-";
+            break;
+        case "ein Familienzimmer":
+            document.getElementById("dankePreis").innerHTML = "Der Preis beträgt " + aufenthaltsdauer * familienzimmerPreis + ".-";
+            break;
+        case "ein Gruppenzimmer":
+            document.getElementById("dankePreis").innerHTML = "Der Preis beträgt " + aufenthaltsdauer * gruppenzimmerPreis + ".-";
+            break;
+        case "eine LuxusSuite":
+            document.getElementById("dankePreis").innerHTML = "Der Preis beträgt " + aufenthaltsdauer * luxussuitePreis + ".-";
+            break;
+    }
+}
 function getElementByDate(searchedDate) {//Findet den Knopf mit einem bestimmten Datum 
     var i = 1;
     var checkedElement;
@@ -154,7 +198,6 @@ function changeMonth(delta) {
     else if (currentMonth == -1) {
         currentMonth = 11;
     }
-    console.log(currentMonth);
     document.getElementById("monthsName").innerHTML = months[currentMonth];
     resetAllButtons();
     addDateTag();
@@ -221,7 +264,6 @@ function coloriseDaysBetween() { //Färbt alle Tage zwischen dem ausgewählten u
             }
         }
         else {//endpoints month < startpoints month
-            console.log("endPoints month < startpoints month");
             document.getElementById(focusDay).style.backgroundColor = "#e1e1e1";
             document.getElementById(focusDay).style.borderColor = "#777";
             var i = 31;
@@ -239,10 +281,8 @@ var pageIsDanke = false; //Wird von "displayBookingDates()" benötigt
 function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "page" & "footer"
     if (file == pagesDirectory + "danke.html") {//Ändert "pageIsDanke", falls beim zweiten Aufruf "danke.html" aufgerufen wird.
         pageIsDanke = true;
-        console.log("");
     }
     else if (pageIsDanke){//Zeigt die Buchungsdaten, falls beim dritten Aufruf "pageIsDanke" schon geändert wurde (erst beim dritten Aufruf, weil "page" erst NACH dem zweiten Aufrurf fertig geladen wurde)
-        console.log(document.getElementById("dankePageDates"));
         var date1 = sessionStorage.getItem('startDate');
         var date2 = sessionStorage.getItem('endDate');
         var realDate1 = convertDateToRealDate(date1);
@@ -264,6 +304,7 @@ function displayBookingDates(file) {//Wird dreimal aufgerufen: für "menu", "pag
             document.getElementById("dankeSentence").innerHTML = "Vielen Dank, dass Sie sich für eine Übernachtung am";
             document.getElementById("dankePageDates").innerHTML = realDate1[0] + "." + realDate1[1];
         }
+        calculatePrice();
     }
 }
 
